@@ -1,0 +1,10 @@
+name: Regions
+form: $/tentax/houses/models/region/fields.yaml
+modelClass: Tentax\Houses\Models\Region
+defaultRedirect: tentax/houses/regions
+create:
+    redirect: 'tentax/houses/regions/update/:id'
+    redirectClose: tentax/houses/regions
+update:
+    redirect: tentax/houses/regions
+    redirectClose: tentax/houses/regions

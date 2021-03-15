@@ -1,0 +1,6 @@
+columns:
+    title:
+        label: 'Название страны'
+        type: text
+        searchable: true
+        sortable: true

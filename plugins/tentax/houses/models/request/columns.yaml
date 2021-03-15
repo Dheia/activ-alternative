@@ -1,0 +1,13 @@
+columns:
+    id:
+        label: id
+        type: number
+    name:
+        label: Имя
+        type: text
+    phone:
+        label: Телефон
+        type: text
+    is_view:
+        label: Статус
+        type: switch

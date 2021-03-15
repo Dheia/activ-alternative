@@ -1,0 +1,10 @@
+name: Apartments
+form: $/tentax/houses/models/apartment/fields.yaml
+modelClass: Tentax\Houses\Models\Apartment
+defaultRedirect: tentax/houses/apartments
+create:
+    redirect: 'tentax/houses/apartments/update/:id'
+    redirectClose: tentax/houses/apartments
+update:
+    redirect: tentax/houses/apartments
+    redirectClose: tentax/houses/apartments

@@ -1,0 +1,21 @@
+<header>
+    <nav>
+        <ul>
+            <li class="{% if this.page.id == 'home' %}active{% endif %}">
+                <a href="{{ 'home'|page }}">Главная</a>
+            </li>
+            <li class="{% if this.page.id == 'catalog' %}active{% endif %}">
+                <a href="{{ 'catalog'|page }}">Каталог</a>
+            </li>
+            <li class="{% if this.page.id == 'news' %}active{% endif %}">
+                <a href="{{ 'news'|page }}">Новости</a>
+            </li>
+            <li class="{% if this.page.id == '404' %}active{% endif %}">
+                <a href="{{ '404'|page }}">Ошибка</a>
+            </li>
+            <li class="{% if this.page.id == 'policy' %}active{% endif %}">
+                <a href="{{ 'policy'|page }}">Политика</a>
+            </li>
+        </ul>
+    </nav>
+</header>

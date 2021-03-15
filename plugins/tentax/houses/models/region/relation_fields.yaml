@@ -1,0 +1,5 @@
+fields:
+    title:
+        label: 'Название региона'
+        span: left
+        type: text

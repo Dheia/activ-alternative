@@ -1,0 +1,10 @@
+columns:
+    id:
+        label: ID
+        type: number
+    title:
+        label: Название
+        type: text
+    is_active:
+        label: Опубликовано
+        type: text

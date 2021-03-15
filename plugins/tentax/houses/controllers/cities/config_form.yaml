@@ -1,0 +1,10 @@
+name: Cities
+form: $/tentax/houses/models/city/fields.yaml
+modelClass: Tentax\Houses\Models\City
+defaultRedirect: tentax/houses/cities
+create:
+    redirect: 'tentax/houses/cities/update/:id'
+    redirectClose: tentax/houses/cities
+update:
+    redirect: tentax/houses/cities
+    redirectClose: tentax/houses/cities

@@ -1,0 +1,9 @@
+build:
+    label: Build
+    view:
+        list: $/tentax/houses/models/build/columns.yaml
+        form: $/tentax/houses/models/build/fields.yaml
+        toolbarButtons: link|unlink
+    manage:
+        list: $/tentax/houses/models/build/columns.yaml
+        form: $/tentax/houses/models/build/fields.yaml

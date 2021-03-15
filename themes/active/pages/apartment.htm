@@ -1,0 +1,50 @@
+title = "Apartment"
+url = "/catalog/:slug"
+layout = "default"
+==
+<?php
+    use TenTax\Houses\Models\Apartment;
+
+    function onStart() {
+        $slug = $this->param('slug');
+        $this['apartment'] = Apartment::getApartmentBySlug($slug);
+    }
+
+?>
+==
+
+<div class="apartment">
+    <div class="apartment-left">
+        <div class="apartment-preview">
+            <img src="{{ apartment.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+        </div>
+        <div class="apartment-gallery">
+            {% for image in apartment.gallery %}
+                <img src="{{ image.thumb(100, 100) }}" alt="">
+            {% endfor %}
+        </div>
+    </div>
+    <div class="apartment-right">
+        <h1>{{ apartment.title }}</h1>
+        <ul class="apartment-list">
+            <li>Цена: {{ apartment.current_price }} руб.</li>
+            <li>Тип дома: {{ apartment.build.type_build }}</li>
+            <li>Этажей в доме: {{ apartment.build.floors }}</li>
+            <li>Количество комнат: {{ apartment.num_rooms }}</li>
+            <li>Этаж: {{ apartment.floor }}</li>
+            <li>Жилая площадь: {{ apartment.living_area }} кв.м</li>
+            <li>Общая площадь: {{ apartment.total_area }} кв.м</li>
+        </ul>
+        <h3>Описание</h3>
+        <p>{{ apartment.full_description }}</p>
+        <h3>Адрес</h3>
+        <ul class="apartment-list">
+            <li>Страна: {{ apartment.build.street.city.region.country.title }}</li>
+            <li>Регион: {{ apartment.build.street.city.region.title }}</li>
+            <li>Населенный пункт: {{ apartment.build.street.city.title }}</li>
+            <li>Улица: {{ apartment.build.street.title }}</li>
+        </ul>
+    </div>
+</div>
+
+{% partial 'form' %}

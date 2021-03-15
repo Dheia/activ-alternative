@@ -1,0 +1,10 @@
+name: Streets
+form: $/tentax/houses/models/street/fields.yaml
+modelClass: Tentax\Houses\Models\Street
+defaultRedirect: tentax/houses/streets
+create:
+    redirect: 'tentax/houses/streets/update/:id'
+    redirectClose: tentax/houses/streets
+update:
+    redirect: tentax/houses/streets
+    redirectClose: tentax/houses/streets

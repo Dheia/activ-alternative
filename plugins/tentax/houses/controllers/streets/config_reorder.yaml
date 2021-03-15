@@ -1,0 +1,4 @@
+title: Streets
+modelClass: Tentax\Houses\Models\Street
+toolbar:
+    buttons: reorder_toolbar

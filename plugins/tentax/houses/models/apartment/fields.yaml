@@ -1,0 +1,81 @@
+fields:
+    is_active:
+        label: Опубликовать
+        span: full
+        type: switch
+    title:
+        label: 'Название объекта'
+        span: left
+        placeholder: 'Введите название объекта'
+        preset:
+            field: build
+            type: ''
+        type: text
+    slug:
+        label: Ярлык
+        span: right
+        preset:
+            field: title
+            type: slug
+        type: text
+tabs:
+    fields:
+        num_rooms:
+            label: 'Количество комнат'
+            span: left
+            type: number
+            tab: Описание
+        floor:
+            label: Этаж
+            span: right
+            type: number
+            tab: Описание
+        living_area:
+            label: 'Жилая площадь'
+            span: left
+            type: number
+            tab: Описание
+        total_area:
+            label: 'Общая площадь'
+            span: right
+            type: number
+            tab: Описание
+        full_description:
+            label: Описание
+            size: small
+            span: full
+            type: textarea
+            tab: Описание
+        preview:
+            label: 'Превью объекта'
+            mode: image
+            imageWidth: '350'
+            imageHeight: '350'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: Изображения
+        gallery:
+            label: 'Галерея объекта'
+            mode: image
+            imageWidth: '160'
+            imageHeight: '160'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: right
+            type: fileupload
+            tab: Изображения
+        current_price:
+            label: 'Текущая цена объекта'
+            span: left
+            type: number
+            tab: Настройки
+        build:
+            label: Build Label
+            type: partial
+            path: field_build

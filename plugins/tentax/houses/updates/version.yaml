@@ -1,0 +1,95 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table tentax_houses_'
+    - builder_table_create_tentax_houses_.php
+1.0.3:
+    - 'Updated table tentax_houses_'
+    - builder_table_update_tentax_houses_appartaments.php
+1.0.4:
+    - 'Updated table tentax_houses_appartaments'
+    - builder_table_update_tentax_houses_appartaments_2.php
+1.0.5:
+    - 'Updated table tentax_houses_appartaments'
+    - builder_table_update_tentax_houses_apartments.php
+1.0.6:
+    - 'Created table tentax_houses_builds'
+    - builder_table_create_tentax_houses_builds.php
+1.0.7:
+    - 'Created table tentax_houses_apartments_builds'
+    - builder_table_create_tentax_houses_apartments_builds.php
+1.0.8:
+    - 'Updated table tentax_houses_apartments_builds'
+    - builder_table_update_tentax_houses_apartments_builds.php
+1.0.9:
+    - 'Updated table tentax_houses_apartments'
+    - builder_table_update_tentax_houses_apartments_2.php
+1.0.10:
+    - 'Drop table tentax_houses_apartments_builds'
+    - builder_table_delete_tentax_houses_apartments_builds.php
+1.0.11:
+    - 'Created table tentax_houses_requests'
+    - builder_table_create_tentax_houses_requests.php
+1.0.12:
+    - 'Updated table tentax_houses_requests'
+    - builder_table_update_tentax_houses_requests.php
+1.0.13:
+    - 'Created table tentax_houses_countries'
+    - builder_table_create_tentax_houses_countries.php
+1.0.14:
+    - 'Created table tentax_houses_regions'
+    - builder_table_create_tentax_houses_regions.php
+1.0.15:
+    - 'Created table tentax_houses_cities'
+    - builder_table_create_tentax_houses_cities.php
+1.0.16:
+    - 'Created table tentax_houses_streets'
+    - builder_table_create_tentax_houses_streets.php
+1.0.17:
+    - 'Updated table tentax_houses_builds'
+    - builder_table_update_tentax_houses_builds.php
+1.0.18:
+    - 'Updated table tentax_houses_builds'
+    - builder_table_update_tentax_houses_builds_2.php
+1.0.19:
+    - 'Updated table tentax_houses_cities'
+    - builder_table_update_tentax_houses_cities.php
+1.0.20:
+    - 'Updated table tentax_houses_streets'
+    - builder_table_update_tentax_houses_streets.php
+1.0.21:
+    - 'Updated table tentax_houses_cities'
+    - builder_table_update_tentax_houses_cities_2.php
+1.0.22:
+    - 'Updated table tentax_houses_streets'
+    - builder_table_update_tentax_houses_streets_2.php
+1.0.23:
+    - 'Updated table tentax_houses_regions'
+    - builder_table_update_tentax_houses_regions.php
+1.0.24:
+    - 'Updated table tentax_houses_cities'
+    - builder_table_update_tentax_houses_cities_3.php
+1.0.25:
+    - 'Updated table tentax_houses_regions'
+    - builder_table_update_tentax_houses_regions_2.php
+1.0.26:
+    - 'Updated table tentax_houses_streets'
+    - builder_table_update_tentax_houses_streets_3.php
+1.0.27:
+    - 'Updated table tentax_houses_builds'
+    - builder_table_update_tentax_houses_builds_3.php
+1.0.28:
+    - 'Updated table tentax_houses_builds'
+    - builder_table_update_tentax_houses_builds_4.php
+1.0.29:
+    - 'Created table tentax_houses_districts'
+    - builder_table_create_tentax_houses_districts.php
+1.0.30:
+    - 'Updated table tentax_houses_streets'
+    - builder_table_update_tentax_houses_streets_4.php
+1.0.31:
+    - 'Drop table tentax_houses_districts'
+    - builder_table_delete_tentax_houses_districts.php
+1.0.32:
+    - 'Updated table tentax_houses_streets'
+    - builder_table_update_tentax_houses_streets_5.php

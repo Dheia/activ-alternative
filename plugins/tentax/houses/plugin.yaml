@@ -1,0 +1,49 @@
+plugin:
+    name: 'tentax.houses::lang.plugin.name'
+    description: 'tentax.houses::lang.plugin.description'
+    author: TenTax
+    icon: oc-icon-building
+    homepage: ''
+navigation:
+    houses:
+        label: Active
+        url: tentax/houses/apartments
+        icon: icon-building-o
+        sideMenu:
+            apartments:
+                label: Квартиры
+                url: tentax/houses/apartments
+                icon: icon-home
+            requests:
+                label: Заявки
+                url: tentax/houses/requests
+                icon: icon-sitemap
+            countries:
+                label: Страны
+                url: tentax/houses/countries
+                icon: icon-sitemap
+    adresses:
+        label: Адреса
+        url: tentax/houses/builds
+        icon: icon-compass
+        sideMenu:
+            builds:
+                label: Здания
+                url: tentax/houses/builds
+                icon: icon-server
+            streets:
+                label: Улицы
+                url: tentax/houses/streets
+                icon: icon-server
+            cities:
+                label: 'Населенные пункты'
+                url: tentax/houses/cities
+                icon: icon-server
+            regions:
+                label: 'Регионы'
+                url: tentax/houses/regions
+                icon: icon-server
+            countries:
+                label: Страны
+                url: tentax/houses/countries
+                icon: icon-server

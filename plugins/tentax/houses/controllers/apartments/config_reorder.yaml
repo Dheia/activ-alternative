@@ -1,0 +1,4 @@
+title: Apartments
+modelClass: Tentax\Houses\Models\Apartment
+toolbar:
+    buttons: reorder_toolbar

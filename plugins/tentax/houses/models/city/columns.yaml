@@ -1,0 +1,7 @@
+columns:
+    title:
+        label: 'Название населенного пункта'
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/tentax/houses/models/city/_city_column.htm 

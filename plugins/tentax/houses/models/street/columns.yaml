@@ -1,0 +1,7 @@
+columns:
+    title:
+        label: 'Название улицы'
+        type: partial
+        searchable: true
+        sortable: true
+        path: ~/plugins/tentax/houses/models/street/_street_column.htm

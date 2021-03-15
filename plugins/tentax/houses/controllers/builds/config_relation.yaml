@@ -1,0 +1,9 @@
+apartments:
+  label: квартиры
+  view:
+        list: $/tentax/houses/models/apartment/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+  manage:
+      form: $/tentax/houses/models/apartment/relation_fields.yaml
+      list: $/tentax/houses/models/apartment/columns.yaml

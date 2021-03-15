@@ -1,0 +1,4 @@
+title: Builds
+modelClass: Tentax\Houses\Models\Build
+toolbar:
+    buttons: reorder_toolbar

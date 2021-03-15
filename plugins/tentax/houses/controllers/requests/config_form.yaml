@@ -1,0 +1,10 @@
+name: Requests
+form: $/tentax/houses/models/request/fields.yaml
+modelClass: Tentax\Houses\Models\Request
+defaultRedirect: tentax/houses/requests
+create:
+    redirect: 'tentax/houses/requests/update/:id'
+    redirectClose: tentax/houses/requests
+update:
+    redirect: tentax/houses/requests
+    redirectClose: tentax/houses/requests

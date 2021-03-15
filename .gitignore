@@ -1,0 +1,14 @@
+.DS_Store
+*.log
+bootstrap
+config
+modules/**/*
+node_modules
+plugins/october
+storage
+themes/demo
+vendor
+.htaccess
+artisan
+index.php
+server.php

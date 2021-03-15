@@ -1,0 +1,9 @@
+builds:
+  label: здания
+  view:
+        list: $/tentax/houses/models/build/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+  manage:
+      form: $/tentax/houses/models/build/relation_fields.yaml
+      list: $/tentax/houses/models/build/columns.yaml

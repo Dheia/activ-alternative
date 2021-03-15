@@ -1,0 +1,37 @@
+title = "Catalog"
+url = "/catalog"
+layout = "default"
+==
+<?php
+    use TenTax\Houses\Models\Apartment;
+    use TenTax\Houses\Models\Request;
+
+    function onStart() {
+        $this['apartments'] = $this->getApartments();
+        $this->addJs([
+            'assets/js/framework.js',
+            'assets/js/catalog.js'
+        ]);
+    }
+
+    function getApartments($params = []) {
+        return Apartment::getApartmentsByParams($params);
+    }
+
+    function onCatalogUpdate() {
+        $this['apartments'] = $this->getApartments(post());
+    }
+?>
+==
+
+<div>
+    <div class="catalog-container">
+        {% partial 'catalog' %}
+    </div>
+    <div class="catalog-loading">Loading...</div>
+    <div class="catalog-error">error</div>
+</div>
+
+{% partial 'form' %}
+
+

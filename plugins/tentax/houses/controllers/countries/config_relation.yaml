@@ -1,0 +1,9 @@
+regions:
+    label: региона
+    view:
+        list: $/tentax/houses/models/region/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        form: $/tentax/houses/models/region/relation_fields.yaml
+        list: $/tentax/houses/models/region/columns.yaml

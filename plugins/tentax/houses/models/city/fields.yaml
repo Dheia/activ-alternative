@@ -1,0 +1,17 @@
+fields:
+    region:
+        label: 'Регион'
+        nameFrom: title
+        descriptionFrom: description
+        span: left
+        type: relation
+    title:
+        label: 'Название населенного пункта'
+        span: left
+        type: text
+    streets:
+        label: Улицы
+        span: full
+        type: partial
+        path: field_streets
+    

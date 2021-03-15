@@ -1,0 +1,172 @@
+* {
+    padding: 0;
+    margin : 0;
+    box-sizing: border-box;
+}
+
+body {}
+
+main {
+    max-width: 1200px;
+    margin   : 0 auto;
+}
+
+/* nav */
+nav {
+    max-width: 1200px;
+    margin   : 0 auto;
+}
+
+nav ul {
+    display: flex;
+    padding: 20px 0;
+}
+
+nav ul li {
+    list-style  : none;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: black;
+}
+
+nav ul li.active a {
+    color: red;
+}
+
+/* catalog */
+
+.catalog {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -20px;
+}
+
+.catalog-apartment {
+    width: calc(33.3% - 40px);
+    margin: 20px;
+}
+
+.catalog-apartment a{
+    color: black;
+}
+
+.catalog-apartment h3{
+    margin-bottom: 10px;
+}
+
+.catalog-apartment-preview {
+    margin-bottom: 10px;
+}
+
+.catalog-apartment-preview a {
+    display: block;
+}
+
+.catalog-apartment-preview img {
+    width: 100%;
+}
+
+.catalog-loading,
+.catalog-error {
+    display: none;
+}
+
+.catalog-loading.show,
+.catalog-error.show {
+    display: block;
+}
+
+/* apartment */
+
+.apartment {
+    display: flex;
+    justify-content: space-between;
+}
+
+.apartment h1 {
+    margin-bottom: 30px;
+}
+
+.apartment h3 {
+    margin-bottom: 10px;
+}
+
+.apartment-left {
+    width: calc(40% - 30px);
+}
+
+.apartment-preview img {
+    width: 100%;
+}
+
+.apartment-right {
+    width: calc(60% - 30px);
+}
+
+.apartment-list {
+    margin-bottom: 20px;
+}
+
+.apartment-list li {
+    list-style: none;
+}
+
+/* pagination */
+
+.pagination {
+    margin-top: 20px;
+}
+
+.pagination ul {
+    display: flex;
+}
+
+.pagination ul li {
+    list-style: none;
+    margin: 0 5px;
+}
+
+.pagination ul li button {
+    min-width: 20px;
+    height: 20px;
+}
+
+.pagination ul li button.active {
+    color: red;
+}
+
+/* form */
+
+.form-section {
+    padding: 50px 0;
+}
+
+.form {
+    border: 1px solid lightgray;
+    padding: 30px;
+    width: 450px;
+}
+
+.form-control {
+    width: 100%;
+    max-width: 100%;
+    min-width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 20px;
+}
+
+.form-button {
+    display: inline-block;
+    padding: 10px;
+}

@@ -1,0 +1,9 @@
+cities:
+    label: города
+    view:
+        list: $/tentax/houses/models/city/columns.yaml
+        toolbarButtons: false
+        showCheckboxes: false
+    manage:
+        form: $/tentax/houses/models/city/relation_fields.yaml
+        list: $/tentax/houses/models/city/columns.yaml
