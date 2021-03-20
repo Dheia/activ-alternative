@@ -13,37 +13,24 @@ navigation:
             apartments:
                 label: Квартиры
                 url: tentax/houses/apartments
-                icon: icon-home
-            requests:
-                label: Заявки
-                url: tentax/houses/requests
-                icon: icon-sitemap
-            countries:
-                label: Страны
-                url: tentax/houses/countries
-                icon: icon-sitemap
-    adresses:
-        label: Адреса
-        url: tentax/houses/builds
-        icon: icon-compass
-        sideMenu:
-            builds:
-                label: Здания
-                url: tentax/houses/builds
-                icon: icon-server
+                icon: my_icon
             streets:
                 label: Улицы
                 url: tentax/houses/streets
-                icon: icon-server
+                icon: my_icon
             cities:
-                label: 'Населенные пункты'
+                label: Города
                 url: tentax/houses/cities
-                icon: icon-server
+                icon: my_icon
             regions:
-                label: 'Регионы'
+                label: Регионы
                 url: tentax/houses/regions
-                icon: icon-server
+                icon: my_icon
             countries:
                 label: Страны
-                url: tentax/houses/countries
-                icon: icon-server
+                url: tentax/houses/countires
+                icon: my_icon
+            types_build:
+                label: 'Типы домов'
+                url: tentax/houses/typesbuild
+                icon: my_icon

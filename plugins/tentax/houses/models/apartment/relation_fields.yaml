@@ -1,5 +1,0 @@
-fields:
-    title:
-        label: 'Номер квартиры'
-        span: left
-        type: text

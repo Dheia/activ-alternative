@@ -1,7 +1,6 @@
 columns:
     title:
         label: 'Название региона'
-        type: partial
+        type: text
         searchable: true
         sortable: true
-        path: ~/plugins/tentax/houses/models/region/_region_column.htm

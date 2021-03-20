@@ -1,0 +1,6 @@
+columns:
+    title:
+        label: 'Тип дома'
+        type: text
+        searchable: true
+        sortable: true

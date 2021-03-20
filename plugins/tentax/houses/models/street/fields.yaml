@@ -1,16 +1,16 @@
 fields:
-    city:
-        label: 'Населенный пункт'
-        nameFrom: title
-        descriptionFrom: description
-        span: left
-        type: relation
     title:
         label: 'Название улицы'
         span: left
         type: text
-    builds:
-        label: Здания
-        span: full
-        type: partial
-        path: field_builds
+    type:
+        label: 'Тип улицы'
+        options:
+            улица: улица
+            проспект: проспект
+            переулок: переулок
+            проезд: проезд
+            бульвар: бульвар
+        showSearch: true
+        span: right
+        type: dropdown

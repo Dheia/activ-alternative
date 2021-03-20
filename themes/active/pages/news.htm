@@ -2,7 +2,33 @@ title = "News"
 url = "/news"
 layout = "default"
 ==
+<?php
+    use TenTax\News\Models\Post;
 
-<section>News</section>
+    function onStart() {
+        $this['posts'] = $this->getPosts();
+        $this->addJs([
+            'assets/js/framework.js',
+            'assets/js/news.js'
+        ]);
+    }
+
+    function getPosts($params = []) {
+        return Post::getPostsByParams($params);
+    }
+
+    function onListPostsUpdate() {
+        $this['posts'] = $this->getPosts(post());
+    }
+?>
+==
+
+<div>
+    <div class="news-container">
+        {% partial 'news' %}
+    </div>
+    <div class="catalog-loading">Loading...</div>
+    <div class="catalog-error">error</div>
+</div>
 
 {% partial 'form' %}

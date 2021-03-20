@@ -1,17 +1,14 @@
 fields:
-    region:
-        label: 'Регион'
-        nameFrom: title
-        descriptionFrom: description
-        span: left
-        type: relation
     title:
         label: 'Название населенного пункта'
         span: left
         type: text
-    streets:
-        label: Улицы
-        span: full
-        type: partial
-        path: field_streets
-    
+    type:
+        label: 'Тип населенного пункта'
+        options:
+            город: город
+            село: село
+            деревня: деревня
+        showSearch: true
+        span: right
+        type: dropdown

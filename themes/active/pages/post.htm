@@ -1,0 +1,33 @@
+title = "Post"
+url = "/news/:slug"
+layout = "default"
+==
+<?php
+    use TenTax\News\Models\Post;
+
+    function onStart() {
+        $slug = $this->param('slug');
+        $this['post'] = Post::getPostBySlug($slug);
+    }
+
+?>
+==
+
+{% if post.is_active %}
+    <div class="apartment">
+        <div class="apartment-left">
+            <div class="apartment-preview">
+                <img src="{{ post.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+            </div>
+        </div>
+        <div class="apartment-right">
+            <h1>{{ post.title }}</h1>
+            <span>{{ post.created_at|date('d.m.Y') }}</span>
+            <p>{{ post.text|raw }}</p>
+        </div>
+    </div>
+{% else %}
+    записи не найдено
+{% endif %}
+
+{% partial 'form' %}

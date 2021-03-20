@@ -1,10 +1,45 @@
 columns:
-    id:
-        label: ID
-        type: number
     title:
         label: Название
         type: text
+        searchable: true
+        sortable: true
+    apartment_num:
+        label: 'Номер квартиры'
+        type: text
+    build_num:
+        label: 'Номер дома'
+        type: text
+    street:
+        label: Улица
+        type: text
+        searchable: true
+        sortable: true
+        select: title
+        relation: street
+    city:
+        label: 'Населеннный пункт'
+        type: text
+        searchable: true
+        sortable: true
+        select: title
+        relation: city
+    region:
+        label: Регион
+        type: text
+        searchable: true
+        sortable: true
+        select: title
+        relation: region
+    country:
+        label: Страна
+        type: text
+        searchable: true
+        sortable: true
+        select: title
+        relation: country
     is_active:
         label: Опубликовано
-        type: text
+        type: partial
+        sortable: true
+        path: $/tentax/houses/models/apartment/_column_publish.htm

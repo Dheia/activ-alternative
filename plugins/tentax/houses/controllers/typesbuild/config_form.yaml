@@ -1,0 +1,10 @@
+name: TypesBuild
+form: $/tentax/houses/models/typebuild/fields.yaml
+modelClass: Tentax\Houses\Models\TypeBuild
+defaultRedirect: tentax/houses/typesbuild
+create:
+    redirect: 'tentax/houses/typesbuild/update/:id'
+    redirectClose: tentax/houses/typesbuild
+update:
+    redirect: tentax/houses/typesbuild
+    redirectClose: tentax/houses/typesbuild

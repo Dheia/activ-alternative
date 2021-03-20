@@ -1,5 +1,0 @@
-fields:
-    title:
-        label: 'Название улицы'
-        span: left
-        type: text

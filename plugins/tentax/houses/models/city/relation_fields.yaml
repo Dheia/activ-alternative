@@ -1,5 +1,0 @@
-fields:
-    title:
-        label: 'Название населенного пункта'
-        span: left
-        type: text

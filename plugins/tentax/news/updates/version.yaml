@@ -1,0 +1,23 @@
+1.0.1:
+    - 'Initialize plugin.'
+1.0.2:
+    - 'Created table tentax_news_posts'
+    - builder_table_create_tentax_news_posts.php
+1.0.3:
+    - 'Created table tentax_news_categories'
+    - builder_table_create_tentax_news_categories.php
+1.0.4:
+    - 'Created table tentax_news_categories_posts'
+    - builder_table_create_tentax_news_categories_posts.php
+1.0.5:
+    - 'Updated table tentax_news_posts'
+    - builder_table_update_tentax_news_posts.php
+1.0.6:
+    - 'Updated table tentax_news_posts'
+    - builder_table_update_tentax_news_posts_2.php
+1.0.7:
+    - 'Drop table tentax_news_categories_posts'
+    - builder_table_delete_tentax_news_categories_posts.php
+1.0.8:
+    - 'Created table tentax_news_category_post'
+    - builder_table_create_tentax_news_category_post.php

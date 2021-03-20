@@ -1,9 +1,0 @@
-streets:
-    label: улицы
-    view:
-        list: $/tentax/houses/models/street/columns.yaml
-        toolbarButtons: false
-        showCheckboxes: false
-    manage:
-        form: $/tentax/houses/models/street/relation_fields.yaml
-        list: $/tentax/houses/models/street/columns.yaml

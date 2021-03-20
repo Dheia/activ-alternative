@@ -1,0 +1,10 @@
+name: Categories
+form: $/tentax/news/models/category/fields.yaml
+modelClass: Tentax\News\Models\Category
+defaultRedirect: tentax/news/categories
+create:
+    redirect: 'tentax/news/categories/update/:id'
+    redirectClose: tentax/news/categories
+update:
+    redirect: tentax/news/categories
+    redirectClose: tentax/news/categories

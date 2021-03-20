@@ -3,8 +3,3 @@ fields:
         label: 'Название страны'
         span: left
         type: text
-    regions:
-        label: 'Регионы'
-        span: full
-        type: partial
-        path: field_regions

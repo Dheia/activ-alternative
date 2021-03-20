@@ -1,0 +1,10 @@
+name: Countires
+form: $/tentax/houses/models/country/fields.yaml
+modelClass: Tentax\Houses\Models\Country
+defaultRedirect: tentax/houses/countires
+create:
+    redirect: 'tentax/houses/countires/update/:id'
+    redirectClose: tentax/houses/countires
+update:
+    redirect: tentax/houses/countires
+    redirectClose: tentax/houses/countires

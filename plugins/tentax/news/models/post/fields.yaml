@@ -1,0 +1,45 @@
+tabs:
+    fields:
+        title:
+            label: 'Заголовок новости'
+            span: left
+            type: text
+            tab: Детали
+        categories:
+            label: Категории
+            nameFrom: title
+            descriptionFrom: description
+            span: right
+            type: relation
+            tab: Детали
+        text:
+            label: 'Текст новости'
+            size: giant
+            span: full
+            type: richeditor
+            tab: 'Редактировать текст'
+        preview:
+            label: 'Превью новости'
+            mode: image
+            imageWidth: '300'
+            imageHeight: '300'
+            useCaption: true
+            thumbOptions:
+                mode: crop
+                extension: auto
+            span: left
+            type: fileupload
+            tab: Изображения
+        is_active:
+            label: Опубликовать
+            span: left
+            type: switch
+            tab: Настройки
+        slug:
+            label: Ярлык
+            span: left
+            preset:
+                field: title
+                type: slug
+            type: text
+            tab: Настройки

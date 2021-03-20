@@ -1,7 +1,7 @@
 columns:
     title:
         label: 'Название улицы'
-        type: partial
+        type: text
         searchable: true
         sortable: true
-        path: ~/plugins/tentax/houses/models/street/_street_column.htm
+        select: 'concat(type, '' '', title)'

@@ -1,17 +1,5 @@
 fields:
-    country:
-        label: Страна
-        nameFrom: title
-        descriptionFrom: description
-        span: left
-        type: relation
     title:
         label: 'Название региона'
         span: left
         type: text
-    cities:
-        label: 'Населенные пункты'
-        span: full
-        type: partial
-        path: field_cities
-    

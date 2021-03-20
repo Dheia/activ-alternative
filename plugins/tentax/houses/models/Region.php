@@ -24,14 +24,4 @@ class Region extends Model
      */
     public $rules = [
     ];
-
-    // relations
-
-    public $hasMany = [
-        'cities' => 'TenTax\Houses\Models\City'
-    ];
-
-    public $belongsTo = [
-        'country' => ['Tentax\Houses\Models\Country']
-    ];
 }

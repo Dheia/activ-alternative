@@ -1,0 +1,20 @@
+plugin:
+    name: 'tentax.news::lang.plugin.name'
+    description: 'tentax.news::lang.plugin.description'
+    author: TenTax
+    icon: oc-icon-newspaper-o
+    homepage: ''
+navigation:
+    news:
+        label: Новости
+        url: tentax/news/posts
+        icon: icon-life-ring
+        sideMenu:
+            posts:
+                label: Записи
+                url: tentax/news/posts
+                icon: icon-sitemap
+            categories:
+                label: Категории
+                url: tentax/news/categories
+                icon: icon-sitemap

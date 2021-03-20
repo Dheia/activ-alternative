@@ -1,0 +1,4 @@
+title: Countires
+modelClass: Tentax\Houses\Models\Country
+toolbar:
+    buttons: reorder_toolbar

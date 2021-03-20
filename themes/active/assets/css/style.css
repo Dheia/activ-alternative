@@ -105,6 +105,10 @@ nav ul li.active a {
     width: calc(60% - 30px);
 }
 
+.apartment-right p {
+    margin-bottom: 20px;
+}
+
 .apartment-list {
     margin-bottom: 20px;
 }

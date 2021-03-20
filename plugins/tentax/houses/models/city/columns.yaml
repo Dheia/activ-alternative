@@ -1,7 +1,7 @@
 columns:
     title:
         label: 'Название населенного пункта'
-        type: partial
+        type: text
         searchable: true
         sortable: true
-        path: ~/plugins/tentax/houses/models/city/_city_column.htm 
+        select: 'concat(type, '' '', title)'

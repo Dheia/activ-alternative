@@ -1,6 +1,0 @@
-fields:
-    title:
-        label: 'Номер дома'
-        span: left
-        type: text
-

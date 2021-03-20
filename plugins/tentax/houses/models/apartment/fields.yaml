@@ -1,51 +1,102 @@
-fields:
-    is_active:
-        label: Опубликовать
-        span: full
-        type: switch
-    title:
-        label: 'Название объекта'
-        span: left
-        placeholder: 'Введите название объекта'
-        preset:
-            field: build
-            type: ''
-        type: text
-    slug:
-        label: Ярлык
-        span: right
-        preset:
-            field: title
-            type: slug
-        type: text
 tabs:
     fields:
-        num_rooms:
-            label: 'Количество комнат'
-            span: left
+        title:
+            label: 'Название объекта'
+            span: auto
+            placeholder: 'Введите название объекта'
+            preset:
+                field: build
+                type: ''
+            type: text
+            tab: Детали
+        current_price:
+            label: 'Текущая цена объекта'
+            span: auto
             type: number
-            tab: Описание
+            tab: Детали
+        build_floors:
+            label: 'Количество этажей в доме'
+            span: auto
+            type: number
+            tab: Детали
+        typebuild:
+            label: 'Тип дома'
+            nameFrom: title
+            span: auto
+            type: relation
+            tab: Детали
         floor:
             label: Этаж
+            span: auto
+            type: number
+            tab: Детали
+        num_rooms:
+            label: 'Количество комнат'
             span: right
             type: number
-            tab: Описание
+            tab: Детали
         living_area:
             label: 'Жилая площадь'
             span: left
             type: number
-            tab: Описание
+            tab: Детали
         total_area:
             label: 'Общая площадь'
             span: right
             type: number
-            tab: Описание
+            tab: Детали
         full_description:
             label: Описание
-            size: small
+            size: huge
             span: full
-            type: textarea
-            tab: Описание
+            type: richeditor
+            tab: Детали
+        country:
+            label: Страна
+            nameFrom: title
+            descriptionFrom: description
+            prompt: 'Нажмите на %s для выбора страны'
+            list: $/tentax/houses/models/country/columns.yaml
+            span: left
+            type: recordfinder
+            tab: Адрес
+        region:
+            label: Регион
+            nameFrom: title
+            descriptionFrom: description
+            prompt: 'Нажмите на %s для выбора региона'
+            list: $/tentax/houses/models/region/columns.yaml
+            span: left
+            type: recordfinder
+            tab: Адрес
+        city:
+            label: 'Населенный пункт'
+            nameFrom: title
+            descriptionFrom: description
+            prompt: 'Нажмите на %s для выбора населенного пункта'
+            list: $/tentax/houses/models/city/columns.yaml
+            span: left
+            type: recordfinder
+            tab: Адрес
+        street:
+            label: Улица
+            nameFrom: title
+            descriptionFrom: description
+            prompt: 'Нажмите на %s для выбора названия улицы'
+            list: $/tentax/houses/models/street/columns.yaml
+            span: left
+            type: recordfinder
+            tab: Адрес
+        build_num:
+            label: 'Номер дома'
+            type: text
+            span: left
+            tab: Адрес
+        apartment_num:
+            label: 'Номер квартиры'
+            type: text
+            span: left
+            tab: Адрес
         preview:
             label: 'Превью объекта'
             mode: image
@@ -70,12 +121,16 @@ tabs:
             span: right
             type: fileupload
             tab: Изображения
-        current_price:
-            label: 'Текущая цена объекта'
-            span: left
-            type: number
+        slug:
+            label: Ярлык
+            span: auto
+            preset:
+                field: title
+                type: slug
+            type: text
             tab: Настройки
-        build:
-            label: Build Label
-            type: partial
-            path: field_build
+        is_active:
+            label: Опубликовать
+            span: left
+            type: switch
+            tab: Настройки

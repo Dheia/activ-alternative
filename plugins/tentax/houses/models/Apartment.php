@@ -35,8 +35,17 @@ class Apartment extends Model
     ];
 
     public $belongsTo = [
-        'build' => ['Tentax\Houses\Models\Build']
+        'country' => ['Tentax\Houses\Models\Country'],
+        'region' => ['Tentax\Houses\Models\Region'],
+        'city' => ['Tentax\Houses\Models\City'],
+        'street' => ['Tentax\Houses\Models\Street'],
+        'typebuild' => ['Tentax\Houses\Models\TypeBuild'],
     ];
+
+    public function getCurrentPriceAttribute($price)
+    {
+        return number_format($price, 0, '', ' ');
+    }
 
     // scope functions
 

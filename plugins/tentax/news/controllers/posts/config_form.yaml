@@ -1,0 +1,10 @@
+name: Posts
+form: $/tentax/news/models/post/fields.yaml
+modelClass: Tentax\News\Models\Post
+defaultRedirect: tentax/news/posts
+create:
+    redirect: 'tentax/news/posts/update/:id'
+    redirectClose: tentax/news/posts
+update:
+    redirect: tentax/news/posts
+    redirectClose: tentax/news/posts

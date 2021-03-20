@@ -1,0 +1,4 @@
+title: Categories
+modelClass: Tentax\News\Models\Category
+toolbar:
+    buttons: reorder_toolbar

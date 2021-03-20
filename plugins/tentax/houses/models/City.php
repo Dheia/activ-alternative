@@ -24,14 +24,4 @@ class City extends Model
      */
     public $rules = [
     ];
-
-    // relations
-
-    public $hasMany = [
-        'streets' => 'TenTax\Houses\Models\Street'
-    ];
-
-    public $belongsTo = [
-        'region' => ['Tentax\Houses\Models\Region']
-    ];
 }

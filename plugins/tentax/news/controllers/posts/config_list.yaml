@@ -1,0 +1,12 @@
+list: $/tentax/news/models/post/columns.yaml
+modelClass: Tentax\News\Models\Post
+title: Posts
+noRecordsMessage: 'backend::lang.list.no_records'
+showSetup: true
+showCheckboxes: true
+recordsPerPage: 20
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: 'backend::lang.list.search_prompt'
+recordUrl: 'tentax/news/posts/update/:id'

@@ -1,0 +1,4 @@
+title: TypesBuild
+modelClass: Tentax\Houses\Models\TypeBuild
+toolbar:
+    buttons: reorder_toolbar
