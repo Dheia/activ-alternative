@@ -1,0 +1,6 @@
+plugin:
+    name: 'tentax.contact::lang.plugin.name'
+    description: 'tentax.contact::lang.plugin.description'
+    author: TenTax
+    icon: oc-icon-adjust
+    homepage: ''

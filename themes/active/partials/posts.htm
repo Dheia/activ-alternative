@@ -1,0 +1,18 @@
+<section>
+    <div class="catalog">
+        {% for post in posts %}
+            <article class="catalog-apartment">
+                <div class="catalog-apartment-preview">
+                    <a href="/post/{{ post.slug }}">
+                        <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
+                </h3>
+                <p>{{ str_limit(html_strip(post.text), 200) }}</p>
+                <span>{{ post.created_at|date('d.m.Y') }}</span>
+            </article>
+        {% endfor %}
+    </div>
+</section>

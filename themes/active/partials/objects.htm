@@ -1,0 +1,17 @@
+<section>
+    <div class="catalog">
+        {% for apartment in apartments %}
+            <article class="catalog-apartment">
+                <div class="catalog-apartment-preview">
+                    <a href="/object/{{ apartment.slug }}">
+                        <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
+                    </a>
+                </div>
+                <h3>
+                    <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
+                </h3>
+                <span>{{ apartment.current_price }} руб.</span>
+            </article>
+        {% endfor %}
+    </div>
+</section>

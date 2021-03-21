@@ -1,0 +1,17 @@
+title = "Object"
+url = "/object/:slug"
+layout = "default"
+==
+<?php
+    use TenTax\Houses\Models\Apartment;
+
+    function onStart() {
+        $this['apartment'] = Apartment::getApartmentBySlug($this->param('slug'));
+    }
+?>
+==
+
+<section>
+    {% partial 'object' %}
+    {% partial 'form' %}
+</section>

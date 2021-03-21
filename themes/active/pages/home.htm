@@ -2,7 +2,16 @@ title = "Home"
 url = "/"
 layout = "default"
 ==
+<?php
+    use TenTax\News\Models\Post;
 
-<section>home</section>
+    function onStart() {
+        $this['posts'] = Post::getPostsByParams(['perPage' => 3]);
+    }
+?>
+==
 
-{% partial 'form' %}
+<section>
+    {% partial 'posts' %}
+    {% partial 'form' %}
+</section>

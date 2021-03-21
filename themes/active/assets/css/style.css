@@ -132,12 +132,12 @@ nav ul li.active a {
     margin: 0 5px;
 }
 
-.pagination ul li button {
+.pagination ul li a {
     min-width: 20px;
     height: 20px;
 }
 
-.pagination ul li button.active {
+.pagination ul li a.active {
     color: red;
 }
 

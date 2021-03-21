@@ -13,8 +13,8 @@ navigation:
             posts:
                 label: Записи
                 url: tentax/news/posts
-                icon: icon-sitemap
+                icon: my_icon
             categories:
                 label: Категории
                 url: tentax/news/categories
-                icon: icon-sitemap
+                icon: my_icon
