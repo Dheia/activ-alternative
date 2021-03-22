@@ -6,13 +6,15 @@ description = "Default layout"
         <meta charset="utf-8">
         <title>Active - {{ this.page.title }}</title>
         <link rel="icon" type="image/png" href="">
-        <link href="{{ 'assets/css/style.css'|theme }}" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+        <link href="{{ 'assets/css/style.min.css'|theme }}" rel="stylesheet">
         {% styles %}
     </head>
     <body>
 
         <!-- Header -->
-        {% partial 'header' %}
+        {% partial 'static/header' %}
 
         <!-- Content -->
         <main>
@@ -20,9 +22,11 @@ description = "Default layout"
         </main>
 
         <!-- Footer -->
-        <footer></footer>
+        {% partial 'static/footer' %}
 
         <!-- Scripts -->
+        <script src="https://kit.fontawesome.com/2689382108.js" crossorigin="anonymous"></script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
         {% scripts %}
 
     </body>

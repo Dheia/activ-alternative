@@ -1,0 +1,15 @@
+columns:
+    name:
+        label: 'Имя заказчика'
+        type: text
+        searchable: true
+        sortable: true
+    phone:
+        label: 'Номер телефона'
+        type: text
+        searchable: true
+        sortable: true
+    is_view:
+        label: Обработан
+        type: switch
+        sortable: true

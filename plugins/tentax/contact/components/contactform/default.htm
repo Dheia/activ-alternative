@@ -1,0 +1,19 @@
+<form class="popup__form" id="form">
+    <div class="form-title">Как вас Зовут?</div>
+    <input type="text" placeholder="Имя, Фамилия" class="form-input field" name="name" id="name">
+    <small class="form__error-message">error message</small>
+    <div class="form-title">Ваш номер телефона</div>
+    <input type="text" placeholder="Например, +7 (996) 574-63-49" class="form-input field" name="phone">
+    <small class="form__error-message">error message</small>
+    <div class="form-title">Комментарий</div>
+    <textarea name="comment"  placeholder="Например, удобное время связи" class="input-comment field"></textarea>
+    <small class="form__error-message">error message</small>
+    <div class="form-text">
+        <label>
+            <input type="checkbox" class="form-check" name="agree" required>
+            <span class="form-text">Я соглашаюсь на обработку моих</span>
+            <a href="/policy" target="_blank" class="form-link">персональных данных.</a>
+        </label>
+    </div>
+    <button class="form-button" id="form-button" type="submit">Отправить</button>
+</form>

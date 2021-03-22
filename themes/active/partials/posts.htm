@@ -1,18 +1,22 @@
-<section>
-    <div class="catalog">
-        {% for post in posts %}
-            <article class="catalog-apartment">
-                <div class="catalog-apartment-preview">
-                    <a href="/post/{{ post.slug }}">
-                        <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
-                    </a>
+<!-- start section news -->
+<div class="news" id="news">
+    <div class="news__container container">
+        <h2 class="news-title">Новости</h2>
+        <div class="news-box">
+            
+            {% for post in posts %}
+                <div class="news-item">
+                    <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" class="news-img" alt="">
+                    <div class="news-info">
+                        <h3 class="item-title">{{ post.title }}</h3>
+                        <p class="news-text">{{ str_limit(html_strip(post.text), 200) }}</p>
+                        <a href="/post/{{ post.slug }}" class="news-link">Подробнее</a>
+                    </div>
+                    <p class="news-data">Опубликовано: {{ post.created_at|date('d.m.Y') }}</p>
                 </div>
-                <h3>
-                    <a href="/post/{{ post.slug }}">{{ post.title }}</a>
-                </h3>
-                <p>{{ str_limit(html_strip(post.text), 200) }}</p>
-                <span>{{ post.created_at|date('d.m.Y') }}</span>
-            </article>
-        {% endfor %}
+            {% endfor %}
+
+        </div>
     </div>
-</section>
+</div>
+<!-- stop section news -->

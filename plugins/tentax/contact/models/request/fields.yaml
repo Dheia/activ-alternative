@@ -1,0 +1,18 @@
+fields:
+    is_view:
+        label: Обработан
+        span: left
+        type: switch
+    name:
+        label: 'Имя заказчика'
+        span: left
+        type: text
+    phone:
+        label: 'Номер телефона'
+        span: right
+        type: text
+    comment:
+        label: Комментарий
+        size: large
+        span: full
+        type: textarea

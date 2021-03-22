@@ -1,17 +1,47 @@
-<section>
-    <div class="catalog">
-        {% for apartment in apartments %}
-            <article class="catalog-apartment">
-                <div class="catalog-apartment-preview">
-                    <a href="/object/{{ apartment.slug }}">
-                        <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
-                    </a>
-                </div>
-                <h3>
-                    <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
-                </h3>
-                <span>{{ apartment.current_price }} руб.</span>
-            </article>
-        {% endfor %}
+<div class="catalog">
+    <div class="catalog__container container">
+        <h2 class="catalog-title">Каталог недвижимости</h2>
+        <div class="catalog-box">
+            
+            {% for apartment in apartments %}
+                <a href="/object/{{ apartment.slug }}" class="catalog-card">
+                    <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
+                    <div class="card-box">
+                        <p class="card-title">{{ apartment.title }}</p>
+                        <table class="card-table">
+                            <tr>
+                                <td class="table-row">Жилая площадь, кв.м.:</td>
+                                <th class="table-row">41.92</th>
+                            </tr>
+                            <tr>
+                                <td class="table-row">Количество комнат:</td>
+                                <th class="table-row">3</th>
+                            </tr>
+                            <tr>
+                                <td class="table-row">Общая площадь, кв.м.:</td>
+                                <th class="table-row">59.30</th>
+                            </tr>
+                            <tr>
+                                <td class="table-row">Тип дома:</td>
+                                <th class="table-row">Панельный</th>
+                            </tr>
+                            <tr>
+                                <td class="table-row">Этаж:</td>
+                                <th class="table-row">4</th>
+                            </tr>
+                            <tr>
+                                <td class="table-row">Этажей в доме:</td>
+                                <th class="table-row">5</th>
+                            </tr>
+                        </table>
+                        <div class="card-price">
+                            <p class="price-column">Цена:</p>
+                            <p class="price-realty">{{ apartment.current_price }} <i class="fas fa-ruble-sign"></i></p>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
+            
+        </div>
     </div>
-</section>
+</div>

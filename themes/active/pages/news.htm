@@ -1,6 +1,7 @@
 title = "News"
 url = "/news/:page?"
 layout = "default"
+[contactForm]
 ==
 <?php
     use TenTax\News\Models\Post;
@@ -11,10 +12,6 @@ layout = "default"
 ?>
 ==
 
-<section>
-    <div>
-        {% partial 'posts' %}
-        {% partial 'pagination' items=posts %}
-    </div>
-    {% partial 'form' %}
-</section>
+{% partial 'posts' %}
+{% partial 'pagination' items=posts %}
+{% partial 'popup' %}

@@ -4,6 +4,7 @@ use Cms\Classes\ComponentBase;
 use Input;
 use Mail;
 use Validator;
+use Tentax\Contact\Models\Request;
 
 class ContactForm extends ComponentBase {
     public function componentDetails() {
@@ -38,6 +39,13 @@ class ContactForm extends ComponentBase {
             $message->subject('Заявка с сайта Activ');
         
         });
+
+        Request::create([
+            'name' => $vars['name'],
+            'phone' => $vars['phone'],
+            'comment' => $vars['comment'],
+            'is_view' => 0
+        ]);
 
         return '{"success": "Ваше сообщение отправлено"}';
     }

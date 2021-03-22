@@ -4,3 +4,13 @@ plugin:
     author: TenTax
     icon: oc-icon-adjust
     homepage: ''
+navigation:
+    contact:
+        label: Контакты
+        url: tentax/contact/requests
+        icon: icon-life-ring
+        sideMenu:
+            requests:
+                label: Заявки
+                url: tentax/contact/requests
+                icon: my_icon

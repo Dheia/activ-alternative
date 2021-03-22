@@ -1,0 +1,10 @@
+name: Requests
+form: $/tentax/contact/models/request/fields.yaml
+modelClass: Tentax\Contact\Models\Request
+defaultRedirect: tentax/contact/requests
+create:
+    redirect: 'tentax/contact/requests/update/:id'
+    redirectClose: tentax/contact/requests
+update:
+    redirect: tentax/contact/requests
+    redirectClose: tentax/contact/requests

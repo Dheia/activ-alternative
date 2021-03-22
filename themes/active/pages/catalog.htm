@@ -1,20 +1,18 @@
 title = "Catalog"
 url = "/catalog/:page?"
 layout = "default"
+[contactForm]
 ==
 <?php
     use TenTax\Houses\Models\Apartment;
 
     function onStart() {
         $this['apartments'] = Apartment::getApartmentsByParams(['page' => $this->param('page')]);
+        $this->addJs('assets/js/catalog.bundle.js');
     }
 ?>
 ==
 
-<section>
-    <div>
-        {% partial 'objects' %}
-        {% partial 'pagination' items=apartments %}
-    </div>
-    {% partial 'form' %}
-</section>
+{% partial 'objects' %}
+{% partial 'pagination' items=apartments %}
+{% partial 'popup' %}
