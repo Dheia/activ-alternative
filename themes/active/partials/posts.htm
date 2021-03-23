@@ -1,5 +1,79 @@
+<section class="grid">
+    <div class="grid__container container">
+        <h2 class="grid__title">Новости</h2>
+        <ul class="grid__list">
+
+            {% for post in posts %}
+                <li class="grid__card card card--bordered">
+                    <a href="/post/{{ post.slug }}" class="card__wrapper-link">
+                        <div class="card__preview">
+                            <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="card__preview-img">
+                        </div>
+                        
+                        <div class="card__body">
+                            <h3 class="card__title">{{ post.title }}</h3>
+                            <p class="card__excerpt">{{ str_limit(html_strip(post.text), 200) }}</p>
+                        </div>
+                        
+                        <div class="card__footer">
+                            <a href="/post/{{ post.slug }}" class="card__link">Подробнее</a>
+                            <time class="card__date" datetime="{{ post.created_at|date('Y-m-d') }}">Опубликовано: {{ post.created_at|date('d.m.Y') }}</time>
+                        </div>
+                    </a>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div> 
+</section>
+
+<!-- <li class="grid__card card">
+    <div class="card__preview">
+        <a class="card__preview-link" href="/post/{{ post.slug }}">
+            <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="card__preview-img">
+        </a>
+    </div>
+    
+    <div class="card__body">
+        <h3 class="card__title">{{ post.title }}</h3>
+        <p class="card__excerpt">{{ str_limit(html_strip(post.text), 200) }}</p>
+    </div>
+    
+    <div class="card__footer">
+        <a href="" class="card__link">Подробнее</a>
+        <time class="card__date" datetime="{{ post.created_at|date('Y-m-d') }}">Опубликовано: {{ post.created_at|date('d.m.Y') }}</time>
+    </div>
+</li> -->
+
+<!-- <li class="grid__card card card--bordered">
+    <a href="/post/{{ post.slug }}" class="card__wrapper-link">
+        <div class="card__preview">
+            <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="card__preview-img">
+        </div>
+        
+        <div class="card__body">
+            <h3 class="card__title">{{ post.title }}</h3>
+            <p class="card__excerpt">{{ str_limit(html_strip(post.text), 200) }}</p>
+        </div>
+        
+        <div class="card__footer">
+            <a href="/post/{{ post.slug }}" class="card__link">Подробнее</a>
+            <time class="card__date" datetime="{{ post.created_at|date('Y-m-d') }}">Опубликовано: {{ post.created_at|date('d.m.Y') }}</time>
+        </div>
+    </a>
+</li> -->
+
+
+
+
+
+
+
+
+
+
 <!-- start section news -->
-<div class="news" id="news">
+<!-- <div class="news" id="news">
     <div class="news__container container">
         <h2 class="news-title">Новости</h2>
         <div class="news-box">
@@ -18,5 +92,5 @@
 
         </div>
     </div>
-</div>
+</div> -->
 <!-- stop section news -->

@@ -11,27 +11,27 @@
                         <table class="card-table">
                             <tr>
                                 <td class="table-row">Жилая площадь, кв.м.:</td>
-                                <th class="table-row">41.92</th>
+                                <th class="table-row">{{ apartment.living_area }}</th>
                             </tr>
                             <tr>
                                 <td class="table-row">Количество комнат:</td>
-                                <th class="table-row">3</th>
+                                <th class="table-row">{{ apartment.num_rooms }}</th>
                             </tr>
                             <tr>
                                 <td class="table-row">Общая площадь, кв.м.:</td>
-                                <th class="table-row">59.30</th>
+                                <th class="table-row">{{ apartment.total_area }}</th>
                             </tr>
                             <tr>
                                 <td class="table-row">Тип дома:</td>
-                                <th class="table-row">Панельный</th>
+                                <th class="table-row">{{ apartment.typebuild.title }}</th>
                             </tr>
                             <tr>
                                 <td class="table-row">Этаж:</td>
-                                <th class="table-row">4</th>
+                                <th class="table-row">{{ apartment.floor }}</th>
                             </tr>
                             <tr>
                                 <td class="table-row">Этажей в доме:</td>
-                                <th class="table-row">5</th>
+                                <th class="table-row">{{ apartment.build_floors }}</th>
                             </tr>
                         </table>
                         <div class="card-price">

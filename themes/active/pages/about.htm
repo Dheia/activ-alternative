@@ -1,0 +1,19 @@
+title = "About"
+url = "/about"
+layout = "default"
+is_hidden = 0
+[contactForm]
+==
+<?php
+    use TenTax\News\Models\Post;
+
+    function onStart() {
+        $this['posts'] = Post::getPostsByParams(['perPage' => 3]);
+        $this->addJs('assets/js/index.bundle.js');
+    }
+?>
+==
+
+{% partial 'static/company' %}
+
+{% partial 'posts' %}
