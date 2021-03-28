@@ -1,9 +1,7 @@
-import slider from './modules/slider';
-import popup from './modules/popup'
-import validate from './modules/validate'
+import toggleMenu from './modules/toggleMenu';
+import starterSwiper from './modules/starterSwiper';
 
-window.addEventListener('DOMContentLoaded', function(){
-    slider();
-    popup();
-    validate();
+window.addEventListener('DOMContentLoaded', () => {
+    toggleMenu();
+    starterSwiper();
 });

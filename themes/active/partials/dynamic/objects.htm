@@ -1,0 +1,26 @@
+<section class="objects">
+    <div class="objects__container container">
+        <div class="objects__header">
+            <h2 class="objects__title">Квартиры в Пензе</h2>
+            <a href="#" class="objects__link">Посмотреть все</a>
+        </div>
+        <ul class="objects__list">
+            
+            {% for apartment in apartments %}
+                <li class="objects__card">
+                    <a href="/object/{{ apartment.slug }}" class="objects__card-header">
+                        <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="objects__card-img">
+                    </a>
+                    <div class="objects__card-content">
+                        content
+                    </div>
+                    <div class="objects__card-footer">
+                        <span class="objects__card-text">Цена объекта:</span>
+                        <span class="objects__card-price">{{ apartment.current_price }} ₽</span>
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>

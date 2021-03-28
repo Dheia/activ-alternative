@@ -1,30 +1,25 @@
 .container {
-    width: 1200px;
+    max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
-}
 
-// phone
-@media (max-width:575.98px) {
-    .container {
-    
+    @media(max-width: @x-large-bp) {
+        width: @width-large-x;
     }
-}
-// reverse-phone
-@media (min-width:576px) and (max-width:767.98px) {
-    .container {
-    
+
+    @media(max-width: @large-bp) {
+        width: @width-large;
     }
-}
-// tablet
-@media (min-width:768px) and (max-width:991.98px) {
-    .container {
-    
+
+    @media(max-width: @tablet-bp) {
+        width: @width-tablet;
     }
-}
-// desktop-middle
-@media (min-width:992px) and (max-width:1199.98px) {
-    .container {
-    
+
+    @media(max-width: @reverse-bp) {
+        width: @width-reverse;
+    }
+
+    @media(max-width: @mobile-bp) {
+        width: @width-mobile;
+        padding: 0 2rem;
     }
 }
