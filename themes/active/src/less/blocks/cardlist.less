@@ -1,0 +1,22 @@
+.cardlist {
+    padding: 6rem 0;
+
+    background-color: @lightgrey;
+
+    &__container {
+        overflow: hidden;
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-bottom: 5rem;
+    }
+
+    &__list {
+        display  : grid;
+        grid-gap: 5rem;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
