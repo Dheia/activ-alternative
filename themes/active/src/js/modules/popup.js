@@ -1,14 +1,16 @@
+import validate from './validate'
+
 const popup = () => {
     const popup = document.getElementById('popup');
-    const btns = document.querySelectorAll('.popup-btn-trigger');
+    const btn = document.querySelectorAll('.btn');
     const close = document.getElementById('popup__close');
 
-    btns.forEach(function(btn) {
-        btn.onclick = function () {
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
             popup.style.display = "block";
             document.getElementsByTagName("body")[0].style.overflow="hidden";
         }
-    });
+    }
 
     close.onclick = function () {
         popup.style.display = "none";
@@ -21,7 +23,7 @@ const popup = () => {
             document.getElementsByTagName("body")[0].style.overflow="auto";
         }
     });
-
+    
 };
 
 

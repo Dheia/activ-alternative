@@ -19,6 +19,8 @@ const sliderSwipe = () =>
               swiper: galleryThumbs,
             },
           });
+        
+          
     }
 
 export default sliderSwipe;

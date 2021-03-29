@@ -1,14 +1,17 @@
 {% if post.is_active %}
-    <div class="apartment">
-        <div class="apartment-left">
-            <div class="apartment-preview">
-                <img src="{{ post.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+    <div class="read-news">
+        <div class="read-news__container container">
+            <h2 class="read-news__title">{{ post.title }}</h2>
+            <div class="read-news__box">
+                <div class="read-news__img">
+                    <img src="{{ post.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt=""> 
+                </div>
+                <div class="read-news__info">
+                    <p class="read-news__info__text">
+                        {{ post.text|raw }}
+                    </p>
+                </div>
             </div>
-        </div>
-        <div class="apartment-right">
-            <h1>{{ post.title }}</h1>
-            <span>{{ post.created_at|date('d.m.Y') }}</span>
-            <p>{{ post.text|raw }}</p>
         </div>
     </div>
 {% else %}

@@ -116,7 +116,7 @@ const validate = () => {
         };
 
         const postData = async (url, data) => {
-            document.querySelectorAll('.status').textContent = getMessage.loading;
+            document.querySelector('.status').textContent = getMessage.loading;
             let res = await fetch(url, {
                 method: 'POST',
                 body: data
@@ -151,18 +151,19 @@ const validate = () => {
 
                 const formData = new FormData(form);
 
-                postData('/send-mail-api-v1.0', formData)
+                postData('server.php', formData)
                     .then(res => {
                         console.log(res);
                         statusMessage.textContent = getMessage.success
                     })
                     .catch(() => statusMessage.textContent = getMessage.failure)
                     .finally( () => {
+                        
                         setTimeout(() => {
                             closePopup();
                             statusMessage.remove();
                             clearInputs();
-                        }, 3000);
+                        }, 5000);
                     })
 
                     

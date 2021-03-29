@@ -4,7 +4,7 @@
         <div class="catalog-box">
             
             {% for apartment in apartments %}
-                <a href="/object/{{ apartment.slug }}" class="catalog-card">
+                <a href="objects.html" class="catalog-card">
                     <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
                     <div class="card-box">
                         <p class="card-title">{{ apartment.title }}</p>
@@ -41,7 +41,8 @@
                     </div>
                 </a>
             {% endfor %}
-            
+
         </div>
+        {% partial 'pagination' items=apartments %}
     </div>
 </div>
