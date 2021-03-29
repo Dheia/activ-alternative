@@ -8,8 +8,8 @@ layout = "default"
     use TenTax\Houses\Models\Apartment;
 
     function onStart() {
-        $this['posts'] = Post::getPostsByParams(['perPage' => 3]);
-        $this['apartments'] = Apartment::getApartmentsByParams(['perPage' => 3]);
+        $this['posts'] = Post::getPostsByParams(['perPage' => 6]);
+        $this['apartments'] = Apartment::getApartmentsByParams(['perPage' => 6]);
         $this->addJs('assets/js/index.bundle.js');
     }
 ?>
@@ -18,3 +18,5 @@ layout = "default"
 {% partial 'static/starter' %}
 
 {% partial 'dynamic/objects' %}
+
+{% partial 'dynamic/posts' %}

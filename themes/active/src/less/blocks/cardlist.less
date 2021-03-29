@@ -8,15 +8,28 @@
     }
 
     &__header {
-        display: flex;
+        display        : flex;
         justify-content: space-between;
-        align-items: flex-end;
-        margin-bottom: 5rem;
+        align-items    : flex-end;
+        margin-bottom  : 5rem;
     }
 
     &__list {
-        display  : grid;
-        grid-gap: 5rem;
+        display              : grid;
+        grid-gap             : 5rem;
         grid-template-columns: 1fr 1fr 1fr;
+
+        @media(max-width: @tablet-bp) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media(max-width: @reverse-bp) {
+            grid-gap: 2.5rem;
+        }
+
+        @media(max-width: @mobile-bp) {
+            grid-template-columns: 1fr;
+            grid-gap             : 5rem;
+        }
     }
 }

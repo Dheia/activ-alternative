@@ -19,6 +19,14 @@
         position: relative;
         overflow: hidden;
 
+        @media(max-width: @large-bp) {
+            height : 18rem;
+        }
+
+        @media(max-width: @tablet-bp) {
+            height : 20rem;
+        }
+
         &::before {
             width : 100%;
             height: 100%;

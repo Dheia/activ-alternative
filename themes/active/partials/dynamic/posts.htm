@@ -1,0 +1,29 @@
+<section class="cardlist">
+    <div class="cardlist__container container">
+        <div class="cardlist__header">
+            <h2 class="cardlist__title">Последние новости</h2>
+            <a href="#" class="cardlist__link">Посмотреть все</a>
+        </div>
+        <ul class="cardlist__list">
+            
+            {% for post in posts %}
+                <li class="card">
+                    <a href="/object/{{ post.slug }}" class="card__header">
+                        <img src="{{ post.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="card__img">
+                    </a>
+                    <div class="card__content">
+                        <h3 class="card__title">
+                            <a href="/post/{{ apartment.slug }}">{{ post.title }}</a>
+                        </h3>
+                        <p class="card__text">{{ str_limit(html_strip(post.text), 200) }}</p>
+                    </div>
+                    <div class="card__footer">
+                        <span class="card__text">Цена:</span>
+                        <span class="card__price">{{ apartment.current_price }} ₽</span>
+                    </div>
+                </li>
+            {% endfor %}
+
+        </ul>
+    </div>
+</section>
