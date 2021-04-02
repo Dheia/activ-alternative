@@ -1,0 +1,19 @@
+<section class="cardlist {{ selector }}">
+    <div class="cardlist__container container">
+        <div class="cardlist__header">
+            <h2 class="cardlist__title">{{ title }}</h2>
+            <div class="cardlist__row">
+                <a href="{{ allLink }}" class="cardlist__link">Посмотреть все</a>
+                <div class="swiper-navigation">
+                    <button class="swiper-button-prev"></button>
+                    <button class="swiper-button-next"></button>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-cards swiper-container">
+            <div class="swiper-wrapper">
+                {% partial itemsPartial %}
+            </div>
+        </div>
+    </div>
+</section>
