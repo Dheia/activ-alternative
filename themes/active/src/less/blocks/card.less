@@ -2,7 +2,6 @@
     display       : flex;
     flex-direction: column;
     padding       : 2rem 3rem;
-    width         : 100%;
 
     list-style      : none;
     background-color: @white;
@@ -13,19 +12,18 @@
 
     &__header {
         display: block;
-        height : 25rem;
         margin : -2rem -3rem 0;
 
         position: relative;
         overflow: hidden;
 
-        @media(max-width: @large-bp) {
-            height : 18rem;
-        }
+        // @media(max-width: @large-bp) {
+        //     height : 18rem;
+        // }
 
-        @media(max-width: @tablet-bp) {
-            height : 20rem;
-        }
+        // @media(max-width: @tablet-bp) {
+        //     height : 20rem;
+        // }
 
         &::before {
             width : 100%;

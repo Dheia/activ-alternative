@@ -1,5 +1,33 @@
 .swiper {
     &-slide {
         position: relative;
+        height  : auto;
+    }
+
+    &-navigation {
+        display: flex;
+    }
+
+    &-button-prev,
+    &-button-next {
+        width: 4rem;
+        height: 4rem;
+        margin: 0;
+
+        border-radius: 50%;
+        background-color: @darkblue;
+
+        position: relative;
+        top: 0;
+        left: 0;
+
+        &:after {
+            font-size: 1.8rem;
+            color: @white;
+        }
+    }
+
+    &-button-prev {
+        margin-right: 1rem;
     }
 }

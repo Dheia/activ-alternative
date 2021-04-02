@@ -159,8 +159,96 @@ button {
 .swiper-container-vertical.swiper-container-css-mode > .swiper-wrapper {
   scroll-snap-type: y mandatory;
 }
+:root {
+  --swiper-navigation-size: 44px;
+  /*
+  --swiper-navigation-color: var(--swiper-theme-color);
+  */
+}
+.swiper-button-prev,
+.swiper-button-next {
+  position: absolute;
+  top: 50%;
+  width: calc(var(--swiper-navigation-size) / 44 * 27);
+  height: var(--swiper-navigation-size);
+  margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
+  z-index: 10;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--swiper-navigation-color, var(--swiper-theme-color));
+}
+.swiper-button-prev.swiper-button-disabled,
+.swiper-button-next.swiper-button-disabled {
+  opacity: 0.35;
+  cursor: auto;
+  pointer-events: none;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-family: swiper-icons;
+  font-size: var(--swiper-navigation-size);
+  text-transform: none !important;
+  letter-spacing: 0;
+  text-transform: none;
+  font-variant: initial;
+  line-height: 1;
+}
+.swiper-button-prev,
+.swiper-container-rtl .swiper-button-next {
+  left: 10px;
+  right: auto;
+}
+.swiper-button-prev:after,
+.swiper-container-rtl .swiper-button-next:after {
+  content: 'prev';
+}
+.swiper-button-next,
+.swiper-container-rtl .swiper-button-prev {
+  right: 10px;
+  left: auto;
+}
+.swiper-button-next:after,
+.swiper-container-rtl .swiper-button-prev:after {
+  content: 'next';
+}
+.swiper-button-prev.swiper-button-white,
+.swiper-button-next.swiper-button-white {
+  --swiper-navigation-color: #ffffff;
+}
+.swiper-button-prev.swiper-button-black,
+.swiper-button-next.swiper-button-black {
+  --swiper-navigation-color: #000000;
+}
+.swiper-button-lock {
+  display: none;
+}
 .swiper-slide {
   position: relative;
+  height: auto;
+}
+.swiper-navigation {
+  display: flex;
+}
+.swiper-button-prev,
+.swiper-button-next {
+  width: 4rem;
+  height: 4rem;
+  margin: 0;
+  border-radius: 50%;
+  background-color: #194e90;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+.swiper-button-prev:after,
+.swiper-button-next:after {
+  font-size: 1.8rem;
+  color: #fff;
+}
+.swiper-button-prev {
+  margin-right: 1rem;
 }
 .icon-phone::before {
   font-family: icomoon;
@@ -489,7 +577,6 @@ button {
   display: flex;
   flex-direction: column;
   padding: 2rem 3rem;
-  width: 100%;
   list-style: none;
   background-color: #fff;
   box-shadow: 0 0 15px rgba(51, 51, 51, 0.1);
@@ -498,20 +585,9 @@ button {
 }
 .card__header {
   display: block;
-  height: 25rem;
   margin: -2rem -3rem 0;
   position: relative;
   overflow: hidden;
-}
-@media (max-width: 1199.98px) {
-  .card__header {
-    height: 18rem;
-  }
-}
-@media (max-width: 991.98px) {
-  .card__header {
-    height: 20rem;
-  }
 }
 .card__header::before {
   width: 100%;

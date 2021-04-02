@@ -1,7 +1,7 @@
 import Swiper from 'swiper';
 
 const starterSwiper = () => {
-    new Swiper('.swiper-container');
+    new Swiper('.swiper-starter');
 }
 
 export default starterSwiper;

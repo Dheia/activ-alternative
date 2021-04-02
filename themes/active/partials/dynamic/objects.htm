@@ -1,43 +1,31 @@
-<section class="cardlist">
-    <div class="cardlist__container container">
-        <div class="cardlist__header">
-            <h2 class="cardlist__title">Квартиры в Пензе</h2>
-            <a href="#" class="cardlist__link">Посмотреть все</a>
-        </div>
-        <ul class="cardlist__list">
-            
-            {% for apartment in apartments %}
-                <li class="card">
-                    <a href="/object/{{ apartment.slug }}" class="card__header">
-                        <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="" class="card__img">
-                    </a>
-                    <div class="card__content">
-                        <div class="card__location">{{ apartment.city.title }}, {{ apartment.country.title }}</div>
-                        <h3 class="card__title">
-                            <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
-                        </h3>
-                        <ul class="card__list">
-                            <li>
-                                <strong class="icon-floor">Этаж:</strong>
-                                <span>{{ apartment.floor }} из {{ apartment.build_floors }}</span>
-                            </li>
-                            <li>
-                                <strong class="icon-room">Количество комнат:</strong>
-                                <span>{{ apartment.num_rooms }}</span>
-                            </li>
-                            <li>
-                                <strong class="icon-square">Площадь:</strong>
-                                <span>{{ apartment.total_area }} кв.м</span>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="card__footer">
-                        <span class="card__text">Цена:</span>
-                        <span class="card__price">{{ apartment.current_price }} ₽</span>
-                    </div>
+{% for apartment in apartments %}
+    <li class="card swiper-slide">
+        <a href="/object/{{ apartment.slug }}" class="card__header">
+            <img src="{{ apartment.preview.thumb(360, 240, {'mode': 'crop'}) }}" alt="" class="card__img">
+        </a>
+        <div class="card__content">
+            <div class="card__location">{{ apartment.city.title }}, {{ apartment.country.title }}</div>
+            <h3 class="card__title">
+                <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
+            </h3>
+            <ul class="card__list">
+                <li>
+                    <strong class="icon-floor">Этаж:</strong>
+                    <span>{{ apartment.floor }} из {{ apartment.build_floors }}</span>
                 </li>
-            {% endfor %}
-
-        </ul>
-    </div>
-</section>
+                <li>
+                    <strong class="icon-room">Количество комнат:</strong>
+                    <span>{{ apartment.num_rooms }}</span>
+                </li>
+                <li>
+                    <strong class="icon-square">Площадь:</strong>
+                    <span>{{ apartment.total_area }} кв.м</span>
+                </li>
+            </ul>
+        </div>
+        <div class="card__footer">
+            <span class="card__text">Цена:</span>
+            <span class="card__price">{{ apartment.current_price }} ₽</span>
+        </div>
+    </li>
+{% endfor %}

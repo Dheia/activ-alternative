@@ -17,6 +17,38 @@ layout = "default"
 
 {% partial 'static/starter' %}
 
-{% partial 'dynamic/objects' %}
+<section class="cardlist _objects">
+    <div class="cardlist__container container">
+        <div class="cardlist__header">
+            <h2 class="cardlist__title">Последние новости</h2>
+            <a href="#" class="cardlist__link">Посмотреть все</a>
+            <div class="swiper-navigation">
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+            </div>
+        </div>
+        <div class="swiper-cards swiper-container">
+            <div class="swiper-wrapper">
+                {% partial 'dynamic/objects' %}
+            </div>
+        </div>
+    </div>
+</section>
 
-{% partial 'dynamic/posts' %}
+<section class="cardlist _posts">
+    <div class="cardlist__container container">
+        <div class="cardlist__header">
+            <h2 class="cardlist__title">Последние новости</h2>
+            <a href="#" class="cardlist__link">Посмотреть все</a>
+            <div class="swiper-navigation">
+                <button class="swiper-button-prev"></button>
+                <button class="swiper-button-next"></button>
+            </div>
+        </div>
+        <div class="swiper-cards swiper-container">
+            <div class="swiper-wrapper">
+                {% partial 'dynamic/posts' %}
+            </div>
+        </div>
+    </div>
+</section>
