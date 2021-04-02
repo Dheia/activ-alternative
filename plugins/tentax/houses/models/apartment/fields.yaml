@@ -12,6 +12,7 @@ tabs:
         current_price:
             label: 'Текущая цена объекта'
             span: auto
+            required: 1
             type: number
             tab: Детали
         build_floors:

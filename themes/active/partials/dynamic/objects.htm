@@ -25,7 +25,7 @@
         </div>
         <div class="card__footer">
             <span class="card__text">Цена:</span>
-            <span class="card__price">{{ apartment.current_price }} ₽</span>
+            <span class="card__price">{{ apartment.current_price|number_format(0, '', ' ') }} ₽</span>
         </div>
     </li>
 {% endfor %}
