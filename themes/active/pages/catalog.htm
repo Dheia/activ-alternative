@@ -13,6 +13,15 @@ layout = "default"
 ?>
 ==
 
-{% partial 'objects' %}
+{% partial 'static/breadcrumbs' %}
+
+{% if apartments|length > 0 %}
+    {% partial 'dynamic/cardlist' 
+        itemsPartial='dynamic/objects' 
+        title='Квартиры' %}
+{% else %}
+    <div>Записей не найдено</div>
+{% endif %}
+
 {% partial 'pagination' items=apartments %}
 {% partial 'popup' %}

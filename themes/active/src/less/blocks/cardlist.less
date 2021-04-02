@@ -1,7 +1,11 @@
 .cardlist {
-    padding: 6rem 0;
+    padding: 4rem 0;
 
     background-color: @lightgrey;
+
+    @media(max-width: @mobile-bp) {
+        padding: 3rem 0;
+    }
 
     &__container {
         overflow: hidden;
@@ -33,7 +37,7 @@
     &__title {
         margin-right: auto;
 
-        color      : @dark;
+        color      : @darkblue;
         font-weight: 500;
         font-size  : 3.2rem;
 
@@ -45,11 +49,23 @@
     }
 
     &__link {
+        display: flex;
+        align-items: center;
         margin-right: 5rem;
 
         font-size: 1.4rem;
         font-weight: 500;
-        color: @darkblue;
+        color: @darkgrey;
+
+        transition: transform 0.3s;
+
+        &:hover {
+            transform: translateX(1rem);
+        }
+
+        &::after {
+            margin-left: 0.5rem;
+        }
     }
 
     &__list {

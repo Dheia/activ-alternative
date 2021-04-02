@@ -12,6 +12,16 @@ layout = "default"
 ?>
 ==
 
-{% partial 'posts' %}
+{% partial 'static/breadcrumbs' %}
+
+
+{% if posts|length > 0 %}
+    {% partial 'dynamic/cardlist' 
+        itemsPartial='dynamic/posts' 
+        title='Новости' %}
+{% else %}
+    <div>Записей не найдено</div>
+{% endif %}
+
 {% partial 'pagination' items=posts %}
 {% partial 'popup' %}
