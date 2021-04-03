@@ -1,3 +1,17 @@
 <div class="breadcrumbs">
-    [kt,yst ]
+    <div class="breadcrumbs__container container">
+        <ul class="breadcrumbs__list">
+            <li class="breadcrumbs__item">
+                <a href="/" class="breadcrumbs__link">Главная</a>
+            </li>
+
+            {% for crumb in breadcrumbs %}
+                <li class="breadcrumbs__item">/</li>
+                <li class="breadcrumbs__item">
+                    <a href="{{ crumb[1] }}" class="breadcrumbs__link">{{ crumb[0] }}</a>
+                </li>
+            {% endfor %}
+    
+        </ul>
+    </div>
 </div>

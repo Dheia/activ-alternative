@@ -8,10 +8,13 @@ layout = "default"
 
     function onStart() {
         $this['post'] = Post::getPostBySlug($this->param('slug'));
+        $this['breadcrumbs'] = [['Новости', '/news'], [$this['post']->title, '/post/' . $this['post']->slug]];
     }
 
 ?>
 ==
+
+{% partial 'static/breadcrumbs' %}
 
 {% partial 'post' %}
 {% partial 'popup' %}

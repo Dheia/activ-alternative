@@ -57,7 +57,7 @@ class Apartment extends Model
     public function scopegetApartmentsByParams($query, $params = []) {
         extract(array_merge([
             'page' => 1,
-            'perPage' => 8,
+            'perPage' => 9,
             'sort' => 'created_at-desc'
         ], $params));
 

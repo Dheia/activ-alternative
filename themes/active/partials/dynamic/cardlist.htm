@@ -3,8 +3,9 @@
         <div class="cardlist__header">
             <h2 class="cardlist__title">{{ title }}</h2>
         </div>
-        <div class="cardlist__list">
+        <div class="cardlist__list  {% if items.lastPage > 1 %}cardlist__list--space-bottom{% endif %}">
             {% partial itemsPartial %}
         </div>
+        {% partial 'pagination'%}
     </div>
 </section>

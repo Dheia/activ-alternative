@@ -8,6 +8,7 @@ layout = "default"
 
     function onStart() {
         $this['posts'] = Post::getPostsByParams(['page' => $this->param('page')]);
+        $this['breadcrumbs'] = [['Новости', '/news']];
     }
 ?>
 ==
@@ -17,11 +18,11 @@ layout = "default"
 
 {% if posts|length > 0 %}
     {% partial 'dynamic/cardlist' 
-        itemsPartial='dynamic/posts' 
+        itemsPartial='dynamic/posts'
+        items=posts
         title='Новости' %}
 {% else %}
     <div class="container">Записей не найдено</div>
 {% endif %}
 
-{% partial 'pagination' items=posts %}
 {% partial 'popup' %}

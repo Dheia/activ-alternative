@@ -1,25 +1,21 @@
 {% if items.lastPage > 1 %}
     <div class="pagination">
-        <ul class="pagination-list">
+        <ul class="pagination__list">
             {% if items.currentPage > 1 %}
-                <li class="pagination-item">
-                    <a href="/{{ this.page.id }}/{{ items.currentPage - 1 }}" class="pagination-btn">
-                        пред.
-                    </a>
+                <li class="pagination__item">
+                    <a href="/{{ this.page.id }}/{{ items.currentPage - 1 }}" class="pagination__link icon-arrow-left"></a>
                 </li>
             {% endif %}
             {% for i in 1..items.lastPage %}
-                <li class="pagination-item">
-                    <a  href="/{{ this.page.id }}/{{ i }}" class="pagination-btn {% if i == items.currentPage %}active{% endif %}">
+                <li class="pagination__item">
+                    <a  href="/{{ this.page.id }}/{{ i }}" class="pagination__link {% if i == items.currentPage %}_active{% endif %}">
                         {{ i }}
                     </a>
                 </li>
             {% endfor %}
             {% if items.currentPage < items.lastPage %}
-                <li class="pagination-item">
-                    <a href="/{{ this.page.id }}/{{ items.currentPage + 1 }}" class="pagination-btn">
-                        след.
-                    </a>
+                <li class="pagination__item">
+                    <a href="/{{ this.page.id }}/{{ items.currentPage + 1 }}" class="pagination__link icon-arrow-right"></a>
                 </li>
             {% endif %}
         </ul>

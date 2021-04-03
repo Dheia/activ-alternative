@@ -8,6 +8,7 @@ layout = "default"
 
     function onStart() {
         $this['apartments'] = Apartment::getApartmentsByParams(['page' => $this->param('page')]);
+        $this['breadcrumbs'] = [['Каталог', '/catalog']];
         $this->addJs('assets/js/catalog.bundle.js');
     }
 ?>
@@ -17,11 +18,11 @@ layout = "default"
 
 {% if apartments|length > 0 %}
     {% partial 'dynamic/cardlist' 
-        itemsPartial='dynamic/objects' 
+        itemsPartial='dynamic/objects'
+        items=apartments
         title='Квартиры' %}
 {% else %}
     <div class="container">Записей не найдено</div>
 {% endif %}
 
-{% partial 'pagination' items=apartments %}
 {% partial 'popup' %}

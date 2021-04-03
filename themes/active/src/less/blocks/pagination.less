@@ -1,0 +1,41 @@
+.pagination {
+    &__list {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    &__item {
+        margin: 5px;
+
+        list-style: none;
+    }
+
+    &__link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 4rem;
+        height: 4rem;
+
+        border-radius: 3px;
+        background-color: @lightgreyblue;
+
+        color: @greyblue;
+        font-weight: 500;
+        font-size: 1.4rem;
+
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: darken(@lightgreyblue, 10%);
+        }
+
+        &._active {
+            background-color: @darkblue;
+
+            color: @white;
+        }
+    }
+}
