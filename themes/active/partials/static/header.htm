@@ -56,9 +56,9 @@
             <span class="navigation__burger-item"></span>
         </label>
         <div class="nav-box">
-            <a href="#company" class="nav-link">О компании</a>
-            <a href="/catalog" class="nav-link">Каталог недвижимости</a>
-            <a href="/news" class="nav-link">Новости</a>
+            <a href="/" class="nav-link {% if this.page.id=='home' %}active{% endif %}">Главная</a>
+            <a href="/catalog" class="nav-link {% if this.page.id=='catalog' %}active{% endif %}">Каталог недвижимости</a>
+            <a href="/news" class="nav-link {% if this.page.id=='news' %}active{% endif %}">Новости</a>
             <a href="page-partners.html" class="nav-link">Партнеры</a>
             <a href="page-contacts.html" class="nav-link">Контакты</a>
         </div>

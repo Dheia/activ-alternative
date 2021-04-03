@@ -7,7 +7,7 @@ layout = "default"
     use TenTax\News\Models\Post;
 
     function onStart() {
-        $this['posts'] = Post::getPostsByParams(['perPage' => 3]);
+        $this['posts'] = Post::getPostsByParams(['perPage' => 4]);
         $this->addJs('assets/js/index.bundle.js');
     }
 ?>

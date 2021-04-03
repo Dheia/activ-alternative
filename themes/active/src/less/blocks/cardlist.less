@@ -1,0 +1,39 @@
+.cardlist {
+    padding: 40px 0;
+
+    &__title {
+        margin-bottom: 30px;
+
+        font-size     : 30px;
+        font-weight   : 100;
+        text-transform: uppercase;
+        color         : #8f6666;
+        font-family   : 'Source Sans Pro', Arial, Helvetica, sans-serif;
+        letter-spacing: 0.06em;
+    }
+
+    &__box {
+        display              : grid;
+        grid-gap             : 40px;
+        grid-template-columns: repeat(4, 1fr);
+
+        &--space-bottom {
+            margin-bottom: 40px;
+        }
+
+        // desktop-middle
+        @media (max-width:1199.98px) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        // tablet
+        @media (max-width:991.98px) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        // phone
+        @media (max-width:575.98px) {
+            grid-template-columns: 1fr;
+        }
+    }
+}

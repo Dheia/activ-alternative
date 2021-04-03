@@ -1,48 +1,111 @@
-<div class="catalog">
+<section class="cardlist">
+    <div class="container">
+        <h2 class="cardlist__title">Каталог недвижимости</h2>
+        <div class="cardlist__box cardlist__box--space-bottom">
+            {% for apartment in apartments %}
+                <a href="/object/{{ apartment.slug }}" class="card card--hover-shadow">
+                    <div class="card__header">
+                        <img src="{{ apartment.preview.thumb(360, 280, {'mode': 'crop'}) }}" alt="" class="card__img">
+                    </div>
+                    <div class="card__body">
+                        <h3 class="card__title">{{ apartment.title }}</h3>
+                        <ul class="card__list">
+                            <li class="card__item">
+                                <span class="card__item-key">Жилая полащадь, кв.м:</span>
+                                <span class="card__item-value">{{ apartment.living_area }}</span>
+                            </li>
+                            <li class="card__item">
+                                <span class="card__item-key">Количество комнат:</span>
+                                <span class="card__item-value">{{ apartment.num_rooms }}</span>
+                            </li>
+                            <li class="card__item">
+                                <span class="card__item-key">Общая полащадь, кв.м</span>
+                                <span class="card__item-value">{{ apartment.total_area }}</span>
+                            </li>
+                            <li class="card__item">
+                                <span class="card__item-key">Тип дома:</span>
+                                <span class="card__item-value">{{ apartment.typebuild.title }}</span>
+                            </li>
+                            <li class="card__item">
+                                <span class="card__item-key">Этаж:</span>
+                                <span class="card__item-value">{{ apartment.floor }}</span>
+                            </li>
+                            <li class="card__item">
+                                <span class="card__item-key">Этажей в доме:</span>
+                                <span class="card__item-value">{{ apartment.build_floors }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="card__footer">
+                        <div class="card__cost">Цена:</div>
+                        <div class="card__price">{{ apartment.current_price }} ₽</div>
+                    </div>
+                </a>
+            {% endfor %}
+        </div>
+        {% partial 'pagination' items=apartments %}
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="catalog">
     <div class="catalog__container container">
         <h2 class="catalog-title">Каталог недвижимости</h2>
         <div class="catalog-box">
             
-            {% for apartment in apartments %}
-                <a href="objects.html" class="catalog-card">
-                    <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
-                    <div class="card-box">
-                        <p class="card-title">{{ apartment.title }}</p>
-                        <table class="card-table">
-                            <tr>
-                                <td class="table-row">Жилая площадь, кв.м.:</td>
-                                <th class="table-row">{{ apartment.living_area }}</th>
-                            </tr>
-                            <tr>
-                                <td class="table-row">Количество комнат:</td>
-                                <th class="table-row">{{ apartment.num_rooms }}</th>
-                            </tr>
-                            <tr>
-                                <td class="table-row">Общая площадь, кв.м.:</td>
-                                <th class="table-row">{{ apartment.total_area }}</th>
-                            </tr>
-                            <tr>
-                                <td class="table-row">Тип дома:</td>
-                                <th class="table-row">{{ apartment.typebuild.title }}</th>
-                            </tr>
-                            <tr>
-                                <td class="table-row">Этаж:</td>
-                                <th class="table-row">{{ apartment.floor }}</th>
-                            </tr>
-                            <tr>
-                                <td class="table-row">Этажей в доме:</td>
-                                <th class="table-row">{{ apartment.build_floors }}</th>
-                            </tr>
-                        </table>
-                        <div class="card-price">
-                            <p class="price-column">Цена:</p>
-                            <p class="price-realty">{{ apartment.current_price }} <i class="fas fa-ruble-sign"></i></p>
-                        </div>
-                    </div>
-                </a>
-            {% endfor %}
+            
 
         </div>
         {% partial 'pagination' items=apartments %}
     </div>
-</div>
+</div> -->
+
+
+
+
+<!-- <a href="objects.html" class="catalog-card">
+    <img src="{{ apartment.preview.thumb(360, 360, {'mode': 'crop'}) }}" alt="">
+    <div class="card-box">
+        <p class="card-title">{{ apartment.title }}</p>
+        <table class="card-table">
+            <tr>
+                <td class="table-row">Жилая площадь, кв.м.:</td>
+                <th class="table-row">{{ apartment.living_area }}</th>
+            </tr>
+            <tr>
+                <td class="table-row">Количество комнат:</td>
+                <th class="table-row">{{ apartment.num_rooms }}</th>
+            </tr>
+            <tr>
+                <td class="table-row">Общая площадь, кв.м.:</td>
+                <th class="table-row">{{ apartment.total_area }}</th>
+            </tr>
+            <tr>
+                <td class="table-row">Тип дома:</td>
+                <th class="table-row">{{ apartment.typebuild.title }}</th>
+            </tr>
+            <tr>
+                <td class="table-row">Этаж:</td>
+                <th class="table-row">{{ apartment.floor }}</th>
+            </tr>
+            <tr>
+                <td class="table-row">Этажей в доме:</td>
+                <th class="table-row">{{ apartment.build_floors }}</th>
+            </tr>
+        </table>
+        <div class="card-price">
+            <p class="price-column">Цена:</p>
+            <p class="price-realty">{{ apartment.current_price }} <i class="fas fa-ruble-sign"></i></p>
+        </div>
+    </div>
+</a>
+ -->
