@@ -1,0 +1,27 @@
+title = "Catalog"
+url = "/catalog/:page?"
+layout = "default"
+[contactForm]
+==
+<?php
+    use TenTax\Houses\Models\Apartment;
+
+    function onStart() {
+        $this['apartments'] = Apartment::getApartmentsByParams(['page' => $this->param('page')]);
+        $this->addJs('assets/js/catalog.bundle.js');
+    }
+?>
+==
+
+{% partial 'static/breadcrumbs' %}
+
+{% if apartments|length > 0 %}
+    {% partial 'dynamic/cardlist' 
+        itemsPartial='dynamic/objects' 
+        title='Квартиры' %}
+{% else %}
+    <div class="container">Записей не найдено</div>
+{% endif %}
+
+{% partial 'pagination' items=apartments %}
+{% partial 'popup' %}

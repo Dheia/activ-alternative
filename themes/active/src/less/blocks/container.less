@@ -1,0 +1,25 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    @media(max-width: @x-large-bp) {
+        width: @width-large-x;
+    }
+
+    @media(max-width: @large-bp) {
+        width: @width-large;
+    }
+
+    @media(max-width: @tablet-bp) {
+        width: @width-tablet;
+    }
+
+    @media(max-width: @reverse-bp) {
+        width: @width-reverse;
+    }
+
+    @media(max-width: @mobile-bp) {
+        width: @width-mobile;
+        padding: 0 2rem;
+    }
+}

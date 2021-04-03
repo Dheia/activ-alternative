@@ -1,0 +1,27 @@
+title = "News"
+url = "/news/:page?"
+layout = "default"
+[contactForm]
+==
+<?php
+    use TenTax\News\Models\Post;
+
+    function onStart() {
+        $this['posts'] = Post::getPostsByParams(['page' => $this->param('page')]);
+    }
+?>
+==
+
+{% partial 'static/breadcrumbs' %}
+
+
+{% if posts|length > 0 %}
+    {% partial 'dynamic/cardlist' 
+        itemsPartial='dynamic/posts' 
+        title='Новости' %}
+{% else %}
+    <div class="container">Записей не найдено</div>
+{% endif %}
+
+{% partial 'pagination' items=posts %}
+{% partial 'popup' %}

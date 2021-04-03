@@ -1,0 +1,44 @@
+.swiper {
+    &-slide {
+        position: relative;
+        height  : auto;
+    }
+
+    &-navigation {
+        display: flex;
+    }
+
+    &-button-prev,
+    &-button-next {
+        width : 4rem;
+        height: 4rem;
+        margin: 0;
+
+        border-radius   : 50%;
+        background-color: darken(@orange, 7%);
+
+        position: relative;
+        top     : 0;
+        left    : 0;
+
+        transition: opacity 0.3s;
+
+        @media(max-width: @mobile-bp) {
+            width : 3.5rem;
+            height: 3.5rem;
+        }
+
+        &:after {
+            font-size: 1.8rem;
+            color    : @white;
+
+            @media(max-width: @mobile-bp) {
+                font-size: 1.6rem;
+            }
+        }
+    }
+
+    &-button-prev {
+        margin-right: 1rem;
+    }
+}

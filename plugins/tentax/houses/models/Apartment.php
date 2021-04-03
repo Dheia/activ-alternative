@@ -42,11 +42,6 @@ class Apartment extends Model
         'typebuild' => ['Tentax\Houses\Models\TypeBuild'],
     ];
 
-    public function getCurrentPriceAttribute($price)
-    {
-        return number_format($price, 0, '', ' ');
-    }
-
     // scope functions
 
     public function scopegetApartmentBySlug($query, $slug) {

@@ -1,0 +1,36 @@
+.social {
+    &__list {
+        display: flex;
+    }
+
+    &__item {
+        list-style: none;
+
+        &:not(:last-child) {
+            margin-right: 4rem;
+
+            @media(max-width: @tablet-bp) {
+                margin-right: 3rem;
+            }
+
+            @media(max-width: @reverse-bp) {
+                margin-right: 4rem;
+            }
+        }
+    }
+
+    &__link {
+        &::before {
+            color: @darkblue;
+            font-size: 2.4rem;
+
+            transition: color 0.3s;
+        }
+
+        &:hover {
+            &::before {
+                color: @orange; 
+            }
+        }
+    }
+}

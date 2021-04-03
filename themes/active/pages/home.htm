@@ -1,0 +1,34 @@
+title = "Home"
+url = "/"
+layout = "default"
+[contactForm]
+==
+<?php
+    use TenTax\News\Models\Post;
+    use TenTax\Houses\Models\Apartment;
+
+    function onStart() {
+        $this['posts'] = Post::getPostsByParams(['perPage' => 6]);
+        $this['apartments'] = Apartment::getApartmentsByParams(['perPage' => 6]);
+        $this->addJs('assets/js/index.bundle.js');
+    }
+?>
+==
+
+{% partial 'static/starter' %}
+
+{% if apartments|length > 2 %}
+    {% partial 'dynamic/cardlist-swiper' 
+        itemsPartial='dynamic/objects' 
+        title='Квартиры'
+        allLink='/catalog'
+        selector='_objects' %}
+{% endif %}
+
+{% if posts|length > 2 %}
+    {% partial 'dynamic/cardlist-swiper' 
+        itemsPartial='dynamic/posts' 
+        title='Новости'
+        allLink='/news'
+        selector='_posts' %}
+{% endif %}

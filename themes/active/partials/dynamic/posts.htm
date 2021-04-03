@@ -1,0 +1,17 @@
+{% for post in posts %}
+    <div class="card swiper-slide">
+        <a href="/post/{{ post.slug }}" class="card__header">
+            <img src="{{ post.preview.thumb(360, 240, {'mode': 'crop'}) }}" alt="" class="card__img">
+        </a>
+        <div class="card__content">
+            <h3 class="card__title">
+                <a href="/post/{{ post.slug }}">{{ str_limit(html_strip(post.title), 40) }}</a>
+            </h3>
+            <p class="card__text">{{ str_limit(html_strip(post.text), 120) }}</p>
+        </div>
+        <div class="card__footer">
+            <time datetime="10-10-2020" class="card__date">{{ post.created_at|date('F j, Y') }}</time>
+            <a href="/post/{{ post.slug }}" class="card__link">Читать</a>
+        </div>
+    </div>
+{% endfor %}
