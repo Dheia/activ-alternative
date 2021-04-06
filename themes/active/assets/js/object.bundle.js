@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/index.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/js/object.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -1178,51 +1178,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _esm
 
 /***/ }),
 
-/***/ "./src/js/index.js":
-/*!*************************!*\
-  !*** ./src/js/index.js ***!
-  \*************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/js/modules/toggleMenu.js\");\n/* harmony import */ var _modules_starterSwiper__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/starterSwiper */ \"./src/js/modules/starterSwiper.js\");\n/* harmony import */ var _modules_objectsSwiper__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/objectsSwiper */ \"./src/js/modules/objectsSwiper.js\");\n/* harmony import */ var _modules_postsSwiper__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/postsSwiper */ \"./src/js/modules/postsSwiper.js\");\n\r\n\r\n\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    Object(_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n    Object(_modules_starterSwiper__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n    Object(_modules_objectsSwiper__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\r\n    Object(_modules_postsSwiper__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\r\n});\n\n//# sourceURL=webpack:///./src/js/index.js?");
-
-/***/ }),
-
-/***/ "./src/js/modules/objectsSwiper.js":
-/*!*****************************************!*\
-  !*** ./src/js/modules/objectsSwiper.js ***!
-  \*****************************************/
+/***/ "./src/js/modules/apartmentSwiper.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/apartmentSwiper.js ***!
+  \*******************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\r\nswiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_0__[\"Navigation\"]]);\r\n\r\nconst objectsSwiper = () => {\r\n    new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('._objects .swiper-cards', {\r\n        slidesPerView: 1,\r\n        spaceBetween: 30,\r\n        navigation: {\r\n            nextEl: '._objects .swiper-button-next',\r\n            prevEl: '._objects .swiper-button-prev',\r\n          },\r\n        breakpoints: {\r\n            768: {\r\n                slidesPerView: 2,\r\n                spaceBetween: 40\r\n            },\r\n            992: {\r\n                slidesPerView: 3,\r\n                spaceBetween: 50\r\n            }\r\n        }\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (objectsSwiper);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/objectsSwiper.js?");
-
-/***/ }),
-
-/***/ "./src/js/modules/postsSwiper.js":
-/*!***************************************!*\
-  !*** ./src/js/modules/postsSwiper.js ***!
-  \***************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\r\nswiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_0__[\"Navigation\"]]);\r\n\r\nconst postsSwiper = () => {\r\n    new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('._posts .swiper-cards', {\r\n        slidesPerView: 1,\r\n        spaceBetween: 30,\r\n        navigation: {\r\n            nextEl: '._posts .swiper-button-next',\r\n            prevEl: '._posts .swiper-button-prev',\r\n          },\r\n        breakpoints: {\r\n            768: {\r\n                slidesPerView: 2,\r\n                spaceBetween: 40\r\n            },\r\n            992: {\r\n                slidesPerView: 3,\r\n                spaceBetween: 50\r\n            }\r\n        }\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (postsSwiper);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/postsSwiper.js?");
-
-/***/ }),
-
-/***/ "./src/js/modules/starterSwiper.js":
-/*!*****************************************!*\
-  !*** ./src/js/modules/starterSwiper.js ***!
-  \*****************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\r\n\r\nconst starterSwiper = () => {\r\n    new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('.swiper-starter');\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (starterSwiper);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/starterSwiper.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper */ \"./node_modules/swiper/swiper.esm.js\");\n\r\nswiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"].use([swiper__WEBPACK_IMPORTED_MODULE_0__[\"Thumbs\"]]);\r\n\r\nconst apartmentSwiper = () => {\r\n    const galleryThumbs = new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('._thumbs', {\r\n        spaceBetween: 2,\r\n        slidesPerView: 4,\r\n        freeMode: true,\r\n        watchSlidesVisibility: true,\r\n        watchSlidesProgress: true,\r\n    });\r\n\r\n    new swiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"]('._apartment', {\r\n        thumbs: {\r\n            swiper: galleryThumbs\r\n        }\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (apartmentSwiper);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/apartmentSwiper.js?");
 
 /***/ }),
 
@@ -1235,6 +1199,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst toggleMenu = () => {\r\n    const navigation = document.querySelector('.navigation');\r\n    const openBtn = document.querySelector('.navigation__open');\r\n    const coverElem = document.querySelector('.navigation__cover');\r\n    const closeBtn = document.querySelector('.navigation__panel-close');\r\n    const links = navigation.querySelectorAll('.navigation__panel-link');\r\n\r\n    const openMenu = () => {\r\n        navigation.classList.add('_active');\r\n    }\r\n\r\n    const closeMenu = () => {\r\n        navigation.classList.remove('_active');\r\n    }\r\n\r\n    openBtn.addEventListener('click', openMenu);\r\n    coverElem.addEventListener('click', closeMenu);\r\n    closeBtn.addEventListener('click', closeMenu);\r\n    links.forEach(link => link.addEventListener('click', closeMenu));\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (toggleMenu);\n\n//# sourceURL=webpack:///./src/js/modules/toggleMenu.js?");
+
+/***/ }),
+
+/***/ "./src/js/object.js":
+/*!**************************!*\
+  !*** ./src/js/object.js ***!
+  \**************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_apartmentSwiper__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/apartmentSwiper */ \"./src/js/modules/apartmentSwiper.js\");\n/* harmony import */ var _modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/toggleMenu */ \"./src/js/modules/toggleMenu.js\");\n\r\n\r\n\r\nwindow.addEventListener('DOMContentLoaded', () => {\r\n    Object(_modules_toggleMenu__WEBPACK_IMPORTED_MODULE_1__[\"default\"])();\r\n    Object(_modules_apartmentSwiper__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\r\n});\n\n//# sourceURL=webpack:///./src/js/object.js?");
 
 /***/ })
 

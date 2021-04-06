@@ -8,18 +8,18 @@
             <h3 class="card__title">
                 <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
             </h3>
-            <ul class="card__list">
-                <li>
-                    <strong class="icon-floor">Этаж:</strong>
-                    <span>{{ apartment.floor }} из {{ apartment.build_floors }}</span>
+            <ul class="proplist">
+                <li class="proplist__item">
+                    <span class="proplist__key icon-floor">Этаж:</span>
+                    <span class="proplist__value">{{ apartment.floor }} из {{ apartment.build_floors }}</span>
                 </li>
-                <li>
-                    <strong class="icon-room">Количество комнат:</strong>
-                    <span>{{ apartment.num_rooms }}</span>
+                <li class="proplist__item">
+                    <span class="proplist__key icon-room">Количество комнат:</span>
+                    <span class="proplist__value">{{ apartment.num_rooms }}</span>
                 </li>
-                <li>
-                    <strong class="icon-square">Площадь:</strong>
-                    <span>{{ apartment.total_area }} кв.м</span>
+                <li class="proplist__item">
+                    <span class="proplist__key icon-square">Площадь:</span>
+                    <span class="proplist__value">{{ apartment.total_area }} кв.м</span>
                 </li>
             </ul>
         </div>

@@ -1,77 +1,131 @@
 {% if apartment.is_active %}
 
-    <div class="object">
-        <div class="object__container container">
-            <h1 class="object-title">{{ apartment.title }}</h1>
-            <div class="object-box">
-                <div class="swiper">
-                    <div class="swiper-container gallery-top">
-                        <div class="swiper-wrapper">
+    <div class="apartment">
+        <div class="apartment__container container">
+            <div class="apartment__slider">
+
+                <div class="swiper-container _apartment">
+                    <div class="swiper-wrapper">
+
+                        {% for image in apartment.gallery %}
                             <div class="swiper-slide">
-                                <img src="{{ apartment.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+                                <img src="{{ image.thumb(360, 240, { 'mode': 'crop' }) }}" alt="" class="apartment__img">
                             </div>
-                            {% for image in apartment.gallery %}
-                                <div class="swiper-slide">
-                                    <img src="{{ image.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <div class="swiper-button-next"></div>
-                        <div class="swiper-button-prev"></div>
-                    </div>
-                    <div class="swiper-container gallery-thumbs">
-                        <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-                                <img src="{{ apartment.preview.thumb(100, 100, { 'mode': 'crop' }) }}" alt="">
-                            </div>
-                            {% for image in apartment.gallery %}
-                                <div class="swiper-slide">
-                                    <img src="{{ image.thumb(100, 100, { 'mode': 'crop' }) }}" alt="">
-                                </div>
-                            {% endfor %}
-                        </div>
+                        {% endfor %}
+
                     </div>
                 </div>
 
-                <div class="object-info">
-                    <div class="object-table">
-                        <p class="object-price">{{ apartment.current_price }} <i class="fas fa-ruble-sign"></i></p>
-                        <div class="object-table__row">
-                            <p>Этаж:</p>
-                            <h2>{{ apartment.floor }}</h2>
-                        </div>
-                        <div class="object-table__row">
-                            <p>Тип дома:</p>
-                            <h2>{{ apartment.typebuild.title }}</h2>
-                        </div>
-                        <div class="object-table__row">
-                            <p>Количество комнат:</p>
-                            <h2>{{ apartment.num_rooms }}</h2>
-                        </div>
-                        <div class="object-table__row">
-                            <p>Жилая площадь кв.м.:</p>
-                            <h2>{{ apartment.living_area }}</h2>
-                        </div>
-                        <div class="object-table__row">
-                            <p>Этажей в доме:</p>
-                            <h2>{{ apartment.build_floors }}</h2>
-                        </div>
-                        <div class="object-table__row">
-                            <p>Общая площадь, кв.м.:</p>
-                            <h2>{{ apartment.total_area }}</h2>
-                        </div>        
+                <div class="swiper-container _thumbs">
+                    <div class="swiper-wrapper">
+
+                        {% for image in apartment.gallery %}
+                            <div class="swiper-slide swiper-slide-thumb">
+                                <img src="{{ image.thumb(100, 80, { 'mode': 'crop' }) }}" alt="" class="apartment__img">
+                            </div>
+                        {% endfor %}
+
                     </div>
-                    <div class="object-button">
-                        <button class="btn popup-btn-trigger">ЗАКАЗАТЬ ЗВОНОК</button>
-                    </div>
-                </div>   
+                </div>
+
             </div>
-            <div class="object-text">
-                {{ apartment.full_description|raw }}
+            <div class="apartment__body">
+                <div class="apartment__location">{{ apartment.city.title }}, {{ apartment.country.title }}</div>
+                <h3 class="apartment__title">
+                    <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
+                </h3>
+                <ul class="proplist">
+                    <li class="proplist__item">
+                        <span class="proplist__key icon-floor">Этаж:</span>
+                        <span class="proplist__value">{{ apartment.floor }} из {{ apartment.build_floors }}</span>
+                    </li>
+                    <li class="proplist__item">
+                        <span class="proplist__key icon-room">Количество комнат:</span>
+                        <span class="proplist__value">{{ apartment.num_rooms }}</span>
+                    </li>
+                    <li class="proplist__item">
+                        <span class="proplist__key icon-square">Площадь:</span>
+                        <span class="proplist__value">{{ apartment.total_area }} кв.м</span>
+                    </li>
+                </ul>
             </div>
         </div>
     </div>
 
 {% else %}
-    записи не найдено
+записи не найдено
 {% endif %}
+
+
+
+<!-- <div class="object">
+    <div class="object__container container">
+        <h1 class="object-title">{{ apartment.title }}</h1>
+        <div class="object-box">
+            <div class="swiper">
+                <div class="swiper-container gallery-top">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{{ apartment.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+                        </div>
+                        {% for image in apartment.gallery %}
+                            <div class="swiper-slide">
+                                <img src="{{ image.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+                            </div>
+                        {% endfor %}
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+                <div class="swiper-container gallery-thumbs">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <img src="{{ apartment.preview.thumb(100, 100, { 'mode': 'crop' }) }}" alt="">
+                        </div>
+                        {% for image in apartment.gallery %}
+                            <div class="swiper-slide">
+                                <img src="{{ image.thumb(100, 100, { 'mode': 'crop' }) }}" alt="">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="object-info">
+                <div class="object-table">
+                    <p class="object-price">{{ apartment.current_price }} <i class="fas fa-ruble-sign"></i></p>
+                    <div class="object-table__row">
+                        <p>Этаж:</p>
+                        <h2>{{ apartment.floor }}</h2>
+                    </div>
+                    <div class="object-table__row">
+                        <p>Тип дома:</p>
+                        <h2>{{ apartment.typebuild.title }}</h2>
+                    </div>
+                    <div class="object-table__row">
+                        <p>Количество комнат:</p>
+                        <h2>{{ apartment.num_rooms }}</h2>
+                    </div>
+                    <div class="object-table__row">
+                        <p>Жилая площадь кв.м.:</p>
+                        <h2>{{ apartment.living_area }}</h2>
+                    </div>
+                    <div class="object-table__row">
+                        <p>Этажей в доме:</p>
+                        <h2>{{ apartment.build_floors }}</h2>
+                    </div>
+                    <div class="object-table__row">
+                        <p>Общая площадь, кв.м.:</p>
+                        <h2>{{ apartment.total_area }}</h2>
+                    </div>        
+                </div>
+                <div class="object-button">
+                    <button class="btn popup-btn-trigger">ЗАКАЗАТЬ ЗВОНОК</button>
+                </div>
+            </div>   
+        </div>
+        <div class="object-text">
+            {{ apartment.full_description|raw }}
+        </div>
+    </div>
+</div> -->

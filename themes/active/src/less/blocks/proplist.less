@@ -1,0 +1,32 @@
+.proplist {
+    &__item {
+        list-style     : none;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+
+        &:not(:last-child) {
+            margin-bottom: 0.9rem;
+        }
+    }
+
+    &__key {
+        display    : flex;
+        align-items: center;
+
+        text-transform: uppercase;
+        font-weight   : 400;
+        color         : @grey;
+        font-size     : 1.2rem;
+
+        &::before {
+            margin-right: 1.5rem;
+            font-size   : 1.8rem;
+        }
+    }
+
+    &__value {
+        color    : @darkblue;
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,41 @@
+.apartment {
+    padding: 5rem 0;
+
+    background-color: @lightgrey;
+
+    &__container {
+        display: flex;
+
+        background-color: @white;
+
+        @media(max-width: @tablet-bp) {
+            flex-direction: column;
+        }
+
+        ._apartment {
+            margin-bottom: 2px;
+        }
+    }
+
+    &__slider {
+        width: 45%;
+
+        @media(max-width: @tablet-bp) {
+            width: 100%;
+        }
+    }
+
+    &__img {
+        display: flex;
+        width  : 100%;
+    }
+
+    &__body {
+        width  : 55%;
+        padding: 3rem 5rem;
+
+        @media(max-width: @tablet-bp) {
+            width: 100%;
+        }
+    }
+}
