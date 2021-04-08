@@ -1,4 +1,20 @@
 .proplist {
+    &--two-column {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem 5rem;
+
+        @media(max-width: @mobile-bp) {
+            grid-template-columns: 1fr;
+        }
+
+        .proplist__item {
+            &:last-child {
+                margin-bottom: 0.9rem;
+            }
+        }
+    }
+
     &__item {
         list-style     : none;
         display        : flex;

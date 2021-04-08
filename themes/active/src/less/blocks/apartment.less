@@ -6,7 +6,9 @@
     &__container {
         display: flex;
 
-        background-color: @white;
+        border-radius: 5px;
+
+        overflow: hidden;
 
         @media(max-width: @tablet-bp) {
             flex-direction: column;
@@ -20,6 +22,8 @@
     &__slider {
         width: 45%;
 
+        background-color: @white;
+
         @media(max-width: @tablet-bp) {
             width: 100%;
         }
@@ -31,10 +35,117 @@
     }
 
     &__body {
-        width  : 55%;
-        padding: 3rem 5rem;
+        display       : flex;
+        flex-direction: column;
+        width         : 55%;
+        padding       : 3rem 5rem;
+
+        background-color: @white;
+
 
         @media(max-width: @tablet-bp) {
+            width: 100%;
+        }
+
+        @media(max-width: @mobile-bp) {
+            padding: 3rem;
+        }
+    }
+
+    &__header {
+        margin-bottom: 3.5rem;
+    }
+
+    &__location {
+        margin-bottom: 1rem;
+
+        color    : @darkblue;
+        font-size: 1.6rem;
+    }
+
+    &__title {
+        margin-bottom: 2rem;
+
+        font-size  : 3.2rem;
+        color      : @dark;
+        font-weight: 500;
+        line-height: 1.5;
+
+        @media(max-width: @mobile-bp) {
+            font-size: 2.4rem;
+        }
+    }
+
+    &__date {
+        font-weight: 300;
+        font-size  : 1.4rem;
+        color      : @darkgrey;
+    }
+
+    &__content {
+        margin-bottom: 2rem;
+    }
+
+    &__footer {
+        display        : flex;
+        justify-content: space-between;
+        align-items    : flex-end;
+        padding-top    : 2rem;
+        margin-top     : auto;
+
+        border-top: 1px solid @lightgrey;
+
+        @media(max-width: @mobile-bp) {
+            flex-direction: column;
+            align-items   : flex-start;
+        }
+    }
+
+    &__price {
+        display       : flex;
+        flex-direction: column;
+
+        @media(max-width: @mobile-bp) {
+            flex-direction : row;
+            justify-content: space-between;
+            align-items    : baseline;
+            margin-bottom  : 2.5rem;
+            width          : 100%;
+        }
+
+        &-key {
+            margin-bottom: 1rem;
+
+            font-weight   : 300;
+            color         : @darkgrey;
+            font-size     : 1.2rem;
+            text-transform: uppercase;
+
+            @media(max-width: @mobile-bp) {
+                margin: 0 1rem 0 0;
+            }
+        }
+
+        &-value {
+            font-weight: 500;
+            font-size  : 2.8rem;
+            color      : @orange;
+        }
+    }
+
+    &__btn {
+        padding: 1em;
+
+        background-color: @darkblue;
+        border-radius   : 3px;
+        cursor          : pointer;
+
+        color         : @white;
+        text-transform: uppercase;
+        font-weight   : 500;
+        font-size     : 1.2rem;
+
+        @media(max-width: @mobile-bp) {
             width: 100%;
         }
     }

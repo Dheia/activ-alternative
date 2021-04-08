@@ -30,24 +30,46 @@
 
             </div>
             <div class="apartment__body">
-                <div class="apartment__location">{{ apartment.city.title }}, {{ apartment.country.title }}</div>
-                <h3 class="apartment__title">
-                    <a href="/object/{{ apartment.slug }}">{{ apartment.title }}</a>
-                </h3>
-                <ul class="proplist">
-                    <li class="proplist__item">
-                        <span class="proplist__key icon-floor">Этаж:</span>
-                        <span class="proplist__value">{{ apartment.floor }} из {{ apartment.build_floors }}</span>
-                    </li>
-                    <li class="proplist__item">
-                        <span class="proplist__key icon-room">Количество комнат:</span>
-                        <span class="proplist__value">{{ apartment.num_rooms }}</span>
-                    </li>
-                    <li class="proplist__item">
-                        <span class="proplist__key icon-square">Площадь:</span>
-                        <span class="proplist__value">{{ apartment.total_area }} кв.м</span>
-                    </li>
-                </ul>
+                <div class="apartment__header">
+                    <div class="apartment__location">{{ apartment.city.title }}, {{ apartment.country.title }}</div>
+                    <h1 class="apartment__title">{{ apartment.title }}</h1>
+                    <div class="apartment__date">Опубликовано: {{ apartment.created_at|date('F j, Y') }} года</div>
+                </div>
+                <div class="apartment__content">
+                    <ul class="proplist proplist--two-column">
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-floor">Этаж:</span>
+                            <span class="proplist__value">{{ apartment.floor }}</span>
+                        </li>
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-room">Комнат:</span>
+                            <span class="proplist__value">{{ apartment.num_rooms }}</span>
+                        </li>
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-square">Общая пл.:</span>
+                            <span class="proplist__value">{{ apartment.total_area }} кв.м</span>
+                        </li>
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-floor">Этажей в доме:</span>
+                            <span class="proplist__value">{{ apartment.build_floors }}</span>
+                        </li>
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-room">Жилая пл.:</span>
+                            <span class="proplist__value">{{ apartment.living_area }} кв.м</span>
+                        </li>
+                        <li class="proplist__item">
+                            <span class="proplist__key icon-square">Тип дома:</span>
+                            <span class="proplist__value">{{ apartment.typebuild.title }}</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="apartment__footer">
+                    <div class="apartment__price">
+                        <div class="apartment__price-key">Цена</div>
+                        <div class="apartment__price-value">{{ apartment.current_price|number_format(0, '', ' ') }} ₽</div>
+                    </div>
+                    <button class="apartment__btn">Позвонить</button>
+                </div>
             </div>
         </div>
     </div>
