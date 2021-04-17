@@ -761,81 +761,6 @@ button {
   font-weight: 500;
   font-size: 1.4rem;
 }
-.post__body {
-  color: #333;
-  font-weight: 400;
-  line-height: 1.6;
-}
-.post__body h1,
-.post__body h2,
-.post__body h3,
-.post__body h4,
-.post__body h5,
-.post__body h6 {
-  margin-bottom: 1rem;
-  font-weight: 500;
-}
-.post__body h1 {
-  font-size: 2.2rem;
-}
-.post__body h2 {
-  font-size: 2rem;
-}
-.post__body h3 {
-  font-size: 1.8rem;
-}
-.post__body h4,
-.post__body h5,
-.post__body h6 {
-  font-size: 1.6rem;
-}
-.post__body hr,
-.post__body pre,
-.post__body p,
-.post__body blockquote,
-.post__body ol,
-.post__body ul {
-  margin-bottom: 2rem;
-}
-.post__body pre {
-  color: darkred;
-}
-.post__body img {
-  max-width: 100%;
-}
-.post__body blockquote {
-  padding: 2rem;
-  border-left: 4px solid #3357b4;
-  color: #3357b4;
-}
-.post__body blockquote p {
-  margin-bottom: 0;
-}
-.post__body .oc-text-gray {
-  color: #999;
-}
-.post__body .oc-text-bordered {
-  padding: 1rem;
-  border-top: 1px solid #3357b4;
-  border-bottom: 1px solid #3357b4;
-}
-.post__body .oc-text-spaced {
-  letter-spacing: 1.5px;
-}
-.post__body .oc-text-uppercase {
-  text-transform: uppercase;
-}
-.post__body ol,
-.post__body ul {
-  list-style-position: inside;
-}
-.post__body a {
-  color: #3357b4;
-  transition: color 0.3s;
-}
-.post__body a:hover {
-  color: #f3a249;
-}
 .proplist--two-column {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -873,6 +798,81 @@ button {
 .proplist__value {
   color: #3357b4;
   font-size: 1.4rem;
+}
+.raw {
+  color: #333;
+  font-weight: 400;
+  line-height: 1.6;
+}
+.raw h1,
+.raw h2,
+.raw h3,
+.raw h4,
+.raw h5,
+.raw h6 {
+  margin-bottom: 1rem;
+  font-weight: 500;
+}
+.raw h1 {
+  font-size: 2.2rem;
+}
+.raw h2 {
+  font-size: 2rem;
+}
+.raw h3 {
+  font-size: 1.8rem;
+}
+.raw h4,
+.raw h5,
+.raw h6 {
+  font-size: 1.6rem;
+}
+.raw hr,
+.raw pre,
+.raw p,
+.raw blockquote,
+.raw ol,
+.raw ul {
+  margin-bottom: 2rem;
+}
+.raw pre {
+  color: darkred;
+}
+.raw img {
+  max-width: 100%;
+}
+.raw blockquote {
+  padding: 2rem;
+  border-left: 4px solid #3357b4;
+  color: #3357b4;
+}
+.raw blockquote p {
+  margin-bottom: 0;
+}
+.raw .oc-text-gray {
+  color: #999;
+}
+.raw .oc-text-bordered {
+  padding: 1rem;
+  border-top: 1px solid #3357b4;
+  border-bottom: 1px solid #3357b4;
+}
+.raw .oc-text-spaced {
+  letter-spacing: 1.5px;
+}
+.raw .oc-text-uppercase {
+  text-transform: uppercase;
+}
+.raw ol,
+.raw ul {
+  list-style-position: inside;
+}
+.raw a {
+  color: #3357b4;
+  transition: color 0.3s;
+}
+.raw a:hover {
+  color: #f3a249;
 }
 .header {
   width: 100%;
@@ -1210,6 +1210,27 @@ button {
   .apartment__btn {
     width: 100%;
   }
+}
+.apartment-description {
+  padding: 0 20px 5rem;
+  background-color: #f3f4f7;
+  overflow: hidden;
+}
+.apartment-description__container {
+  padding: 40px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+@media (max-width: 575.98px) {
+  .apartment-description__container {
+    padding: 2rem;
+  }
+}
+.apartment-description__title {
+  margin-bottom: 20px;
+  color: #777;
+  font-weight: 500;
+  font-size: 3.2rem;
 }
 .footer {
   padding: 3rem 0;
