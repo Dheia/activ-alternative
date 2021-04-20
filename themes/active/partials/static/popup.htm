@@ -1,11 +1,18 @@
 <div class="popup">
-    <div class="popup__close">close</div>
-    <div class="popup__content">
-        <form class="contact-form">
-            <h3 class="contact-form__title">Обратная связь</h3>
-            <div class="contact-form__group">
-                <input type="text" class="contact-form__control">
+    <div class="popup__content contact-form">
+        <h3 class="contact-form__title">Обратная связь</h3>
+        <form class="contact-form__form">
+            <div class="contact-form__group contact-form__group--error">
+                <input class="contact-form__control" type="text" name="name" placeholder="Ваше имя">
             </div>
+            <div class="contact-form__group">
+                <input class="contact-form__control" type="phone" name="phone" placeholder="Номер телефона">
+            </div>
+            <div class="contact-form__group">
+                <input class="contact-form__control" type="email" name="email" placeholder="Email">
+            </div>
+            <button class="contact-form__submit">Отправить</button>
         </form>
+        <button class="contact-form__close icon-close" type="submit"></button>
     </div>
 </div>
