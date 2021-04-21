@@ -1190,18 +1190,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _mod
 
 /***/ }),
 
-/***/ "./src/js/modules/helpers/postData.js":
-/*!********************************************!*\
-  !*** ./src/js/modules/helpers/postData.js ***!
-  \********************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\nconst postData = async (url, data) => {\r\n    const response = await fetch(url, {\r\n        method: 'POST',\r\n        body: data\r\n    });\r\n\r\n    if(!response.ok) {\r\n        throw new Error('error request');\r\n    }\r\n\r\n    return await response.json();\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (postData);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/helpers/postData.js?");
-
-/***/ }),
-
 /***/ "./src/js/modules/objectsSwiper.js":
 /*!*****************************************!*\
   !*** ./src/js/modules/objectsSwiper.js ***!
@@ -1246,7 +1234,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _helpers_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./helpers/postData */ \"./src/js/modules/helpers/postData.js\");\n\r\n\r\nconst sendForm = () => {\r\n    const forms = document.querySelectorAll('form');\r\n\r\n    const loading = () => {\r\n        console.log('loading');\r\n    }\r\n\r\n    const success = (msg) => {\r\n        console.log(msg);\r\n    }\r\n\r\n    const failed = (msg) => {\r\n        console.log(msg);\r\n    }\r\n\r\n    forms.forEach(form => {\r\n        form.addEventListener('submit', e => {\r\n            e.preventDefault();\r\n            if (true) {\r\n                loading();\r\n\r\n                const data = new FormData(form);\r\n                Object(_helpers_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                    .then(success)\r\n                    .catch(failed);\r\n            }\r\n        });\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/postData */ \"./src/js/services/postData.js\");\n\r\n\r\nconst sendForm = () => {\r\n    const forms = document.querySelectorAll('form');\r\n\r\n    const loading = () => {\r\n        console.log('loading');\r\n    }\r\n\r\n    const showResult = ({ success, error }) => {\r\n        if (success) {\r\n            console.log(success);\r\n        } else if (error) {\r\n            console.log(error);\r\n        }\r\n    }\r\n\r\n    forms.forEach(form => {\r\n        form.addEventListener('submit', e => {\r\n            e.preventDefault();\r\n            if (true) {\r\n                loading();\r\n\r\n                const data = new FormData(form);\r\n                Object(_services_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                    .then(showResult)\r\n                    .catch();\r\n            }\r\n        });\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
 
 /***/ }),
 
@@ -1271,6 +1259,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst toggleMenu = () => {\r\n    const navigation = document.querySelector('.navigation');\r\n    const openBtn = document.querySelector('.navigation__open');\r\n    const coverElem = document.querySelector('.navigation__cover');\r\n    const closeBtn = document.querySelector('.navigation__panel-close');\r\n    const links = navigation.querySelectorAll('.navigation__panel-link');\r\n\r\n    const openMenu = () => {\r\n        navigation.classList.add('_active');\r\n    }\r\n\r\n    const closeMenu = () => {\r\n        navigation.classList.remove('_active');\r\n    }\r\n\r\n    openBtn.addEventListener('click', openMenu);\r\n    coverElem.addEventListener('click', closeMenu);\r\n    closeBtn.addEventListener('click', closeMenu);\r\n    links.forEach(link => link.addEventListener('click', closeMenu));\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (toggleMenu);\n\n//# sourceURL=webpack:///./src/js/modules/toggleMenu.js?");
+
+/***/ }),
+
+/***/ "./src/js/services/postData.js":
+/*!*************************************!*\
+  !*** ./src/js/services/postData.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst postData = async (url, data) => {\r\n    const response = await fetch(url, {\r\n        method: 'POST',\r\n        body: data\r\n    });\r\n\r\n    if(!response.ok) {\r\n        throw new Error('error request');\r\n    }\r\n\r\n    return await response.json();\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (postData);\r\n\n\n//# sourceURL=webpack:///./src/js/services/postData.js?");
 
 /***/ })
 

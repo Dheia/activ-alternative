@@ -908,8 +908,10 @@ button {
   padding: 1em;
   border-radius: 3px;
   border: 1px solid #999;
+  resize: none;
   color: #333;
   font-size: 1.4rem;
+  font-family: inherit;
 }
 .contact-form__control:focus {
   outline: none;
@@ -918,6 +920,16 @@ button {
   color: #999;
   font-weight: 500;
   font-size: 1.4rem;
+}
+.contact-form__checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
+  margin-right: 1rem;
+  position: relative;
+  top: 2px;
+}
+.contact-form__label {
+  font-size: 1.2rem;
 }
 .contact-form__submit {
   width: 100%;

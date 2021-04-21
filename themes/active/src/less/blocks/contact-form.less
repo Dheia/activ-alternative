@@ -37,9 +37,11 @@
 
         border-radius: 3px;
         border: 1px solid @grey;
+        resize: none;
 
         color: @dark;
         font-size: 1.4rem;
+        font-family: inherit;
         
         &:focus {
             outline: none;
@@ -50,6 +52,19 @@
             font-weight: 500;
             font-size: 1.4rem;
         }
+    }
+
+    &__checkbox {
+        width: 1.6rem;
+        height: 1.6rem;
+        margin-right: 1rem;
+
+        position: relative;
+        top: 2px;
+    }
+
+    &__label {
+        font-size: 1.2rem;
     }
 
     &__submit {

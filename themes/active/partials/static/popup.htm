@@ -6,10 +6,14 @@
                 <input class="contact-form__control" type="text" name="name" placeholder="Ваше имя">
             </div>
             <div class="contact-form__group">
-                <input class="contact-form__control" type="phone" name="phone" placeholder="Номер телефона">
+                <input class="contact-form__control" type="text" name="phone" placeholder="Номер телефона">
+            </div>
+            <div class="contact-form__group contact-form__group--error">
+                <textarea class="contact-form__control" name="comment" placeholder="Ваше сообщение" rows="1"></textarea>
             </div>
             <div class="contact-form__group">
-                <input class="contact-form__control" type="email" name="email" placeholder="Email">
+                <input type="checkbox" id="contactFormCheckbox" name="agree" class="contact-form__checkbox">
+                <label for="contactFormCheckbox" class="contact-form__label">Я согласен с условиями политики конфидециальности</label>
             </div>
             <button class="contact-form__submit">Отправить</button>
         </form>

@@ -1,4 +1,4 @@
-import postData from "./helpers/postData";
+import postData from "../services/postData";
 
 const sendForm = () => {
     const forms = document.querySelectorAll('form');
@@ -7,12 +7,12 @@ const sendForm = () => {
         console.log('loading');
     }
 
-    const success = (msg) => {
-        console.log(msg);
-    }
-
-    const failed = (msg) => {
-        console.log(msg);
+    const showResult = ({ success, error }) => {
+        if (success) {
+            console.log(success);
+        } else if (error) {
+            console.log(error);
+        }
     }
 
     forms.forEach(form => {
@@ -23,8 +23,8 @@ const sendForm = () => {
 
                 const data = new FormData(form);
                 postData('/send-mail-api-v1.0', data)
-                    .then(success)
-                    .catch(failed);
+                    .then(showResult)
+                    .catch();
             }
         });
     });
