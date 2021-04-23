@@ -1,54 +1,46 @@
 import postData from "../services/postData";
-
-const createElement = ({ tagName, classList }) => {
-    const elem = document.createElement(tagName);
-    if (classList) {
-        elem.className = classList;
-    }
-    return elem;
-}
+import createElement from '../helpers/createElement';
 
 const sendForm = () => {
-    const form = document.querySelector('form');
-    const formWrapper = form.parentNode;
+    const forms = document.querySelectorAll('form');
+    const cover = createElement({ tagName: 'div', classList: 'contact-form__cover' });
 
-    const messageElem = createElement({ tagName: 'div', classList: 'contact-form__cover' });
-
-    const clearInputs = () => {
-        form.reset();
+    const message = {
+        loading: '<div class="contact-form__loading"></div>',
+        success: 'success',
+        error: 'error'
     }
-
-    const successOrError = (msg) => {
-        messageElem.innerHTML = msg;
-        setTimeout(() => {
-            messageElem.remove();
-        }, 3000);
-    }
-
-    const setMessage = ({ loading, success, error }) => {
-        if (loading) {
-            formWrapper.appendChild(messageElem);
-            messageElem.innerHTML = loading;
-        } else if (success) {
-            successOrError(success);
-            clearInputs();
-        } else if (error) {
-            successOrError(error);
+    
+    const changeCoverContent = (form) => {
+        return ({success}) => {
+            cover.innerHTML = success ? message.success : message.error;
+            setTimeout(() => {
+                form.reset();
+                cover.remove();
+            }, 3000);
         }
     }
+    
+    const addCover = (form) => {
+        form.parentNode.appendChild(cover);
+        cover.innerHTML = message.loading;
+    }
 
-    form.addEventListener('submit', e => {
-        e.preventDefault();
-        if (true) {
-            setMessage({ loading: 'Загрузка' });
+    forms.forEach(form => {
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            addCover(form);
+
             const data = new FormData(form);
             postData('/send-mail-api-v1.0', data)
-                .then(setMessage)
+                .then(changeCoverContent(form))
                 .catch((err) => {
-                    setMessage({error: err.message});
+                    changeCoverContent(form)({ error: err.message });
                 });
-        }
+        });
     });
+
 }
 
 export default sendForm;

@@ -1178,6 +1178,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _esm
 
 /***/ }),
 
+/***/ "./src/js/helpers/createElement.js":
+/*!*****************************************!*\
+  !*** ./src/js/helpers/createElement.js ***!
+  \*****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst createElement = ({ tagName, classList }) => {\r\n    const elem = document.createElement(tagName);\r\n    if (classList) {\r\n        elem.className = classList;\r\n    }\r\n    return elem;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (createElement);\r\n\n\n//# sourceURL=webpack:///./src/js/helpers/createElement.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -1234,7 +1246,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/postData */ \"./src/js/services/postData.js\");\n\r\n\r\nconst createElement = ({ tagName, classList }) => {\r\n    const elem = document.createElement(tagName);\r\n    if (classList) {\r\n        elem.className = classList;\r\n    }\r\n    return elem;\r\n}\r\n\r\nconst sendForm = () => {\r\n    const form = document.querySelector('form');\r\n    const formWrapper = form.parentNode;\r\n\r\n    const messageElem = createElement({ tagName: 'div', classList: 'contact-form__cover' });\r\n\r\n    const clearInputs = () => {\r\n        form.reset();\r\n    }\r\n\r\n    const successOrError = (msg) => {\r\n        messageElem.innerHTML = msg;\r\n        setTimeout(() => {\r\n            messageElem.remove();\r\n        }, 3000);\r\n    }\r\n\r\n    const setMessage = ({ loading, success, error }) => {\r\n        if (loading) {\r\n            formWrapper.appendChild(messageElem);\r\n            messageElem.innerHTML = loading;\r\n        } else if (success) {\r\n            successOrError(success);\r\n            clearInputs();\r\n        } else if (error) {\r\n            successOrError(error);\r\n        }\r\n    }\r\n\r\n    form.addEventListener('submit', e => {\r\n        e.preventDefault();\r\n        if (true) {\r\n            setMessage({ loading: 'Загрузка' });\r\n            const data = new FormData(form);\r\n            Object(_services_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                .then(setMessage)\r\n                .catch((err) => {\r\n                    setMessage({error: err.message});\r\n                });\r\n        }\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/postData */ \"./src/js/services/postData.js\");\n/* harmony import */ var _helpers_createElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/createElement */ \"./src/js/helpers/createElement.js\");\n\r\n\r\n\r\nconst sendForm = () => {\r\n    const forms = document.querySelectorAll('form');\r\n    const cover = Object(_helpers_createElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({ tagName: 'div', classList: 'contact-form__cover' });\r\n\r\n    const message = {\r\n        loading: '<div class=\"contact-form__loading\"></div>',\r\n        success: 'success',\r\n        error: 'error'\r\n    }\r\n    \r\n    const changeCoverContent = (form) => {\r\n        return ({success}) => {\r\n            cover.innerHTML = success ? message.success : message.error;\r\n            setTimeout(() => {\r\n                form.reset();\r\n                cover.remove();\r\n            }, 3000);\r\n        }\r\n    }\r\n    \r\n    const addCover = (form) => {\r\n        form.parentNode.appendChild(cover);\r\n        cover.innerHTML = message.loading;\r\n    }\r\n\r\n    forms.forEach(form => {\r\n        form.addEventListener('submit', e => {\r\n            e.preventDefault();\r\n\r\n            addCover(form);\r\n\r\n            const data = new FormData(form);\r\n            Object(_services_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                .then(changeCoverContent(form))\r\n                .catch((err) => {\r\n                    changeCoverContent(form)({ error: err.message });\r\n                });\r\n        });\r\n    });\r\n\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
 
 /***/ }),
 
