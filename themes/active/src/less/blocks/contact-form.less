@@ -33,6 +33,10 @@
         border-color: @red;
     }
 
+    &__group--error &__label {
+        color: @red;
+    }
+
     &__control {
         width: 100%;
         padding: 1em;
@@ -131,40 +135,9 @@
             display: flex;
         }
     }
-
-    &__loading {
-        width: 80px;
-        height: 80px;
-
-        position: relative;
-
-        &::before, &::after {
-            display: block;
-            width: 100%;
-            height: 100%;
-
-            content: "";
-            border-radius: 50%;
-            border: 3px solid transparent;
-
-            position: absolute;
-            top: 0;
-            left: 0;
-        }
-
-        &::before {
-            border-color: rgba(@darkblue, 0.5);
-        }
-
-        &::after {
-            border-top-color: @darkblue;
-
-            animation: loading-rotate 1s linear 0s infinite;
-        }
-    }
 }
 
-@keyframes loading-rotate {
+@keyframes spinner-rotate {
     from {
         transform: rotate(0deg);
     }

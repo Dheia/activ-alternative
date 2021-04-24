@@ -1246,7 +1246,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/postData */ \"./src/js/services/postData.js\");\n/* harmony import */ var _helpers_createElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/createElement */ \"./src/js/helpers/createElement.js\");\n\r\n\r\n\r\nconst sendForm = () => {\r\n    const forms = document.querySelectorAll('form');\r\n    const cover = Object(_helpers_createElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({ tagName: 'div', classList: 'contact-form__cover' });\r\n\r\n    const message = {\r\n        loading: '<div class=\"contact-form__loading\"></div>',\r\n        success: 'success',\r\n        error: 'error'\r\n    }\r\n    \r\n    const changeCoverContent = (form) => {\r\n        return ({success}) => {\r\n            cover.innerHTML = success ? message.success : message.error;\r\n            setTimeout(() => {\r\n                form.reset();\r\n                cover.remove();\r\n            }, 3000);\r\n        }\r\n    }\r\n    \r\n    const addCover = (form) => {\r\n        form.parentNode.appendChild(cover);\r\n        cover.innerHTML = message.loading;\r\n    }\r\n\r\n    forms.forEach(form => {\r\n        form.addEventListener('submit', e => {\r\n            e.preventDefault();\r\n\r\n            addCover(form);\r\n\r\n            const data = new FormData(form);\r\n            Object(_services_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                .then(changeCoverContent(form))\r\n                .catch((err) => {\r\n                    changeCoverContent(form)({ error: err.message });\r\n                });\r\n        });\r\n    });\r\n\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _services_postData__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../services/postData */ \"./src/js/services/postData.js\");\n/* harmony import */ var _helpers_createElement__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../helpers/createElement */ \"./src/js/helpers/createElement.js\");\n/* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./validator */ \"./src/js/modules/validator/index.js\");\n/* harmony import */ var _validator_inputs_watcher__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./validator/inputs-watcher */ \"./src/js/modules/validator/inputs-watcher.js\");\n\r\n\r\n\r\n\r\n\r\nconst sendForm = () => {\r\n    const form = document.querySelector('.contact-form__form');\r\n    const cover = Object(_helpers_createElement__WEBPACK_IMPORTED_MODULE_1__[\"default\"])({ tagName: 'div', classList: 'contact-form__cover' });\r\n\r\n    Object(_validator_inputs_watcher__WEBPACK_IMPORTED_MODULE_3__[\"default\"])(form);\r\n\r\n    const message = {\r\n        loading: '<div class=\"spinner\"></div>',\r\n        success: 'success',\r\n        error: 'error'\r\n    }\r\n\r\n    const afterResponse = ({ success }) => {\r\n        cover.innerHTML = success ? message.success : message.error;\r\n        setTimeout(() => {\r\n            form.reset();\r\n            cover.remove();\r\n        }, 3000);\r\n    }\r\n\r\n    form.addEventListener('submit', e => {\r\n        e.preventDefault();\r\n\r\n        if (Object(_validator__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(form)) {\r\n            cover.innerHTML = message.loading;\r\n            form.parentNode.appendChild(cover);\r\n\r\n            const data = new FormData(form);\r\n            Object(_services_postData__WEBPACK_IMPORTED_MODULE_0__[\"default\"])('/send-mail-api-v1.0', data)\r\n                .then(afterResponse)\r\n                .catch(afterResponse);\r\n        }\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (sendForm);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/sendForm.js?");
 
 /***/ }),
 
@@ -1271,6 +1271,78 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var swip
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\nconst toggleMenu = () => {\r\n    const navigation = document.querySelector('.navigation');\r\n    const openBtn = document.querySelector('.navigation__open');\r\n    const coverElem = document.querySelector('.navigation__cover');\r\n    const closeBtn = document.querySelector('.navigation__panel-close');\r\n    const links = navigation.querySelectorAll('.navigation__panel-link');\r\n\r\n    const openMenu = () => {\r\n        navigation.classList.add('_active');\r\n    }\r\n\r\n    const closeMenu = () => {\r\n        navigation.classList.remove('_active');\r\n    }\r\n\r\n    openBtn.addEventListener('click', openMenu);\r\n    coverElem.addEventListener('click', closeMenu);\r\n    closeBtn.addEventListener('click', closeMenu);\r\n    links.forEach(link => link.addEventListener('click', closeMenu));\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (toggleMenu);\n\n//# sourceURL=webpack:///./src/js/modules/toggleMenu.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/conditions.js":
+/*!************************************************!*\
+  !*** ./src/js/modules/validator/conditions.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst conditions = {\r\n    name: { require: true, minlength: 5, maxlength: 80 },\r\n    phone: { require: true, minlength: 5, maxlength: 80 },\r\n    agree: { require: true }\r\n};\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (conditions);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/conditions.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/error-input.js":
+/*!*************************************************!*\
+  !*** ./src/js/modules/validator/error-input.js ***!
+  \*************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst errorInput = (input, action) => {\r\n    input.parentNode.classList[action]('contact-form__group--error');\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (errorInput);\r\n\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/error-input.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/index.js":
+/*!*******************************************!*\
+  !*** ./src/js/modules/validator/index.js ***!
+  \*******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _validator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./validator */ \"./src/js/modules/validator/validator.js\");\n/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return _validator__WEBPACK_IMPORTED_MODULE_0__[\"default\"]; });\n\n\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/inputs-watcher.js":
+/*!****************************************************!*\
+  !*** ./src/js/modules/validator/inputs-watcher.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _conditions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./conditions */ \"./src/js/modules/validator/conditions.js\");\n/* harmony import */ var _error_input__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./error-input */ \"./src/js/modules/validator/error-input.js\");\n/* harmony import */ var _validate_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./validate-input */ \"./src/js/modules/validator/validate-input.js\");\n\r\n\r\n\r\n\r\nconst inputsWatcher = (form) => {\r\n    Object.keys(_conditions__WEBPACK_IMPORTED_MODULE_0__[\"default\"]).forEach(name => {\r\n        const input = form.querySelector(`[name=\"${name}\"]`);\r\n\r\n        input.addEventListener('input', () => {\r\n            Object(_error_input__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(input, 'remove');\r\n        \r\n            if (!Object(_validate_input__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(input, _conditions__WEBPACK_IMPORTED_MODULE_0__[\"default\"][name])) {\r\n                Object(_error_input__WEBPACK_IMPORTED_MODULE_1__[\"default\"])(input, 'add');\r\n            }\r\n        });\r\n    });\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (inputsWatcher);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/inputs-watcher.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/validate-input.js":
+/*!****************************************************!*\
+  !*** ./src/js/modules/validator/validate-input.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst validateInput = (input, { require, minlength, maxlength }) => {\r\n    const value = input.getAttribute('type') == 'checkbox' ? input.checked : input.value.trim();\r\n\r\n    if (require && !value) return false;\r\n    if (minlength && minlength > value.length) return false;\r\n    if (maxlength && maxlength < value.length) return false;\r\n\r\n    return true;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (validateInput);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/validate-input.js?");
+
+/***/ }),
+
+/***/ "./src/js/modules/validator/validator.js":
+/*!***********************************************!*\
+  !*** ./src/js/modules/validator/validator.js ***!
+  \***********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _error_input__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./error-input */ \"./src/js/modules/validator/error-input.js\");\n/* harmony import */ var _conditions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./conditions */ \"./src/js/modules/validator/conditions.js\");\n/* harmony import */ var _validate_input__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./validate-input */ \"./src/js/modules/validator/validate-input.js\");\n\r\n\r\n\r\n\r\nconst validator = (form) => {\r\n    let validateSuccess = true;\r\n    \r\n    Object.keys(_conditions__WEBPACK_IMPORTED_MODULE_1__[\"default\"]).forEach(name => {\r\n        const input = form.querySelector(`[name=\"${name}\"]`);\r\n        \r\n        Object(_error_input__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(input, 'remove');\r\n        \r\n        if (!Object(_validate_input__WEBPACK_IMPORTED_MODULE_2__[\"default\"])(input, _conditions__WEBPACK_IMPORTED_MODULE_1__[\"default\"][name])) {\r\n            Object(_error_input__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(input, 'add');\r\n            validateSuccess = false;\r\n        }\r\n    });\r\n\r\n    return validateSuccess;\r\n}\r\n\r\n/* harmony default export */ __webpack_exports__[\"default\"] = (validator);\r\n\n\n//# sourceURL=webpack:///./src/js/modules/validator/validator.js?");
 
 /***/ }),
 

@@ -1,46 +1,41 @@
 import postData from "../services/postData";
 import createElement from '../helpers/createElement';
+import validator from "./validator";
+import inputsWatcher from './validator/inputs-watcher';
 
 const sendForm = () => {
-    const forms = document.querySelectorAll('form');
+    const form = document.querySelector('.contact-form__form');
     const cover = createElement({ tagName: 'div', classList: 'contact-form__cover' });
 
+    inputsWatcher(form);
+
     const message = {
-        loading: '<div class="contact-form__loading"></div>',
+        loading: '<div class="spinner"></div>',
         success: 'success',
         error: 'error'
     }
-    
-    const changeCoverContent = (form) => {
-        return ({success}) => {
-            cover.innerHTML = success ? message.success : message.error;
-            setTimeout(() => {
-                form.reset();
-                cover.remove();
-            }, 3000);
-        }
-    }
-    
-    const addCover = (form) => {
-        form.parentNode.appendChild(cover);
-        cover.innerHTML = message.loading;
+
+    const afterResponse = ({ success }) => {
+        cover.innerHTML = success ? message.success : message.error;
+        setTimeout(() => {
+            form.reset();
+            cover.remove();
+        }, 3000);
     }
 
-    forms.forEach(form => {
-        form.addEventListener('submit', e => {
-            e.preventDefault();
+    form.addEventListener('submit', e => {
+        e.preventDefault();
 
-            addCover(form);
+        if (validator(form)) {
+            cover.innerHTML = message.loading;
+            form.parentNode.appendChild(cover);
 
             const data = new FormData(form);
             postData('/send-mail-api-v1.0', data)
-                .then(changeCoverContent(form))
-                .catch((err) => {
-                    changeCoverContent(form)({ error: err.message });
-                });
-        });
+                .then(afterResponse)
+                .catch(afterResponse);
+        }
     });
-
 }
 
 export default sendForm;
