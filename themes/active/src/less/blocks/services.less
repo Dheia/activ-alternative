@@ -1,0 +1,41 @@
+.services {
+    padding: 10rem 0;
+    background-color: @lightgrey;
+
+    &--white {
+        background-color: @white;
+    }
+
+    &__container {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 33.3%;
+        padding: 3rem 5rem;
+    }
+
+    &__image {
+        width: 6rem;
+        margin-bottom: 2rem;
+    }
+
+    &__title {
+        margin-bottom: 1rem;
+
+        text-align: center;
+        color: darken(@darkblue, 10%);
+    }
+
+    &__text {
+        margin-bottom: auto;
+
+        text-align: center;
+        font-weight: 300;
+    }
+}

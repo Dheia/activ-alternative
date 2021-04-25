@@ -549,7 +549,7 @@ button {
   flex-direction: column;
   padding: 0 6rem;
   list-style: none;
-  border-left: 2px solid rgba(243, 244, 247, 0.1);
+  border-left: 2px solid rgba(248, 248, 248, 0.1);
 }
 @media (max-width: 991.98px) {
   .infobar__cardlist-item {
@@ -564,11 +564,11 @@ button {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: 1.2rem;
-  color: rgba(243, 244, 247, 0.7);
+  color: rgba(248, 248, 248, 0.7);
 }
 .infobar__cardlist-text,
 .infobar__cardlist-link {
-  color: #f3f4f7;
+  color: #f8f8f8;
   font-weight: 500;
   font-size: 1.6rem;
 }
@@ -668,7 +668,7 @@ button {
   align-items: center;
   padding-top: 2rem;
   margin-top: auto;
-  border-top: 1px solid #f3f4f7;
+  border-top: 1px solid #f8f8f8;
 }
 .card__price {
   font-weight: 500;
@@ -719,7 +719,7 @@ button {
 }
 .post {
   padding: 5rem 0;
-  background-color: #f3f4f7;
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 .post__container {
@@ -1064,7 +1064,7 @@ button {
 .breadcrumbs__item {
   margin-right: 1rem;
   list-style: none;
-  color: #f3f4f7;
+  color: #f8f8f8;
   font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 500;
@@ -1114,7 +1114,7 @@ button {
 .starter__suptitle {
   margin-bottom: 3rem;
   font-size: 2.6rem;
-  color: rgba(243, 244, 247, 0.8);
+  color: rgba(248, 248, 248, 0.8);
 }
 .starter__title {
   margin-bottom: 3rem;
@@ -1132,7 +1132,7 @@ button {
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  color: #f3f4f7;
+  color: #f8f8f8;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 0.8;
@@ -1145,8 +1145,8 @@ button {
   transform: translateX(1rem);
 }
 .cardlist {
-  padding: 4rem 0;
-  background-color: #f3f4f7;
+  padding: 10rem 0;
+  background-color: #f8f8f8;
 }
 @media (max-width: 575.98px) {
   .cardlist {
@@ -1231,7 +1231,7 @@ button {
 }
 .apartment {
   padding: 5rem 0;
-  background-color: #f3f4f7;
+  background-color: #f8f8f8;
 }
 .apartment__container {
   display: flex;
@@ -1310,7 +1310,7 @@ button {
   align-items: flex-end;
   padding-top: 2rem;
   margin-top: auto;
-  border-top: 1px solid #f3f4f7;
+  border-top: 1px solid #f8f8f8;
 }
 @media (max-width: 575.98px) {
   .apartment__footer {
@@ -1365,7 +1365,7 @@ button {
 }
 .apartment-description {
   padding: 0 20px 5rem;
-  background-color: #f3f4f7;
+  background-color: #f8f8f8;
   overflow: hidden;
 }
 .apartment-description__container {
@@ -1383,6 +1383,39 @@ button {
   color: #777;
   font-weight: 500;
   font-size: 3.2rem;
+}
+.services {
+  padding: 10rem 0;
+  background-color: #f8f8f8;
+}
+.services--white {
+  background-color: #fff;
+}
+.services__container {
+  display: flex;
+  flex-wrap: wrap;
+}
+.services__card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 33.3%;
+  padding: 3rem 5rem;
+}
+.services__image {
+  width: 6rem;
+  margin-bottom: 2rem;
+}
+.services__title {
+  margin-bottom: 1rem;
+  text-align: center;
+  color: #28448c;
+}
+.services__text {
+  margin-bottom: auto;
+  text-align: center;
+  font-weight: 300;
 }
 .footer {
   padding: 3rem 0;

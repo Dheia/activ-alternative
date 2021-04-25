@@ -25,6 +25,8 @@ layout = "default"
         selector='_objects' %}
 {% endif %}
 
+{% partial 'static/services' classList="services--white" %}
+
 {% if posts|length > 2 %}
     {% partial 'dynamic/cardlist-swiper' 
         itemsPartial='dynamic/posts' 
