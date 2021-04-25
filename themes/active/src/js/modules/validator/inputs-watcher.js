@@ -16,4 +16,4 @@ const inputsWatcher = (form) => {
     });
 }
 
-export default inputsWatcher;
+export {inputsWatcher};

@@ -1,7 +1,6 @@
 import postData from "../services/postData";
 import createElement from '../helpers/createElement';
-import validator from "./validator";
-import inputsWatcher from './validator/inputs-watcher';
+import validator, { inputsWatcher } from "./validator";
 
 const sendForm = () => {
     const form = document.querySelector('.contact-form__form');
@@ -10,9 +9,9 @@ const sendForm = () => {
     inputsWatcher(form);
 
     const message = {
-        loading: '<div class="spinner"></div>',
-        success: 'success',
-        error: 'error'
+        loading: `<div class="awesome-spinner"></div>`,
+        success: `<div class="awesome-fetch-success">Ваше сообщение успешно отправлено!</div>`,
+        error: `<div class="awesome-fetch-error">Извините. Ошибка сервера. Попробуйте повторить попытку позже.</div>`
     }
 
     const afterResponse = ({ success }) => {
