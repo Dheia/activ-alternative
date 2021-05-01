@@ -549,7 +549,7 @@ button {
   flex-direction: column;
   padding: 0 6rem;
   list-style: none;
-  border-left: 2px solid rgba(248, 248, 248, 0.1);
+  border-left: 2px solid rgba(250, 247, 247, 0.1);
 }
 @media (max-width: 991.98px) {
   .infobar__cardlist-item {
@@ -564,11 +564,11 @@ button {
   margin-bottom: 0.5rem;
   text-transform: uppercase;
   font-size: 1.2rem;
-  color: rgba(248, 248, 248, 0.7);
+  color: rgba(250, 247, 247, 0.7);
 }
 .infobar__cardlist-text,
 .infobar__cardlist-link {
-  color: #f8f8f8;
+  color: #faf7f7;
   font-weight: 500;
   font-size: 1.6rem;
 }
@@ -604,8 +604,7 @@ button {
   flex-direction: column;
   padding: 2rem 3rem;
   list-style: none;
-  background-color: #fff;
-  box-shadow: 0 0 15px rgba(51, 51, 51, 0.1);
+  border: 1px solid rgba(51, 87, 180, 0.3);
   border-radius: 3px;
   overflow: hidden;
 }
@@ -668,7 +667,7 @@ button {
   align-items: center;
   padding-top: 2rem;
   margin-top: auto;
-  border-top: 1px solid #f8f8f8;
+  border-top: 1px solid #faf7f7;
 }
 .card__price {
   font-weight: 500;
@@ -719,7 +718,7 @@ button {
 }
 .post {
   padding: 5rem 0;
-  background-color: #f8f8f8;
+  background-color: #faf7f7;
   overflow: hidden;
 }
 .post__container {
@@ -788,7 +787,7 @@ button {
   align-items: center;
   text-transform: uppercase;
   font-weight: 400;
-  color: #999;
+  color: #777;
   font-size: 1.2rem;
 }
 .proplist__key::before {
@@ -1064,7 +1063,7 @@ button {
 .breadcrumbs__item {
   margin-right: 1rem;
   list-style: none;
-  color: #f8f8f8;
+  color: #faf7f7;
   font-size: 1.2rem;
   line-height: 1.5;
   font-weight: 500;
@@ -1114,7 +1113,7 @@ button {
 .starter__suptitle {
   margin-bottom: 3rem;
   font-size: 2.6rem;
-  color: rgba(248, 248, 248, 0.8);
+  color: rgba(250, 247, 247, 0.8);
 }
 .starter__title {
   margin-bottom: 3rem;
@@ -1132,7 +1131,7 @@ button {
   display: flex;
   align-items: center;
   text-transform: uppercase;
-  color: #f8f8f8;
+  color: #faf7f7;
   font-weight: 600;
   font-size: 1.4rem;
   line-height: 0.8;
@@ -1145,8 +1144,7 @@ button {
   transform: translateX(1rem);
 }
 .cardlist {
-  padding: 10rem 0;
-  background-color: #f8f8f8;
+  padding: 8rem 0 10rem;
 }
 @media (max-width: 575.98px) {
   .cardlist {
@@ -1231,7 +1229,7 @@ button {
 }
 .apartment {
   padding: 5rem 0;
-  background-color: #f8f8f8;
+  background-color: #faf7f7;
 }
 .apartment__container {
   display: flex;
@@ -1310,7 +1308,7 @@ button {
   align-items: flex-end;
   padding-top: 2rem;
   margin-top: auto;
-  border-top: 1px solid #f8f8f8;
+  border-top: 1px solid #faf7f7;
 }
 @media (max-width: 575.98px) {
   .apartment__footer {
@@ -1365,7 +1363,7 @@ button {
 }
 .apartment-description {
   padding: 0 20px 5rem;
-  background-color: #f8f8f8;
+  background-color: #faf7f7;
   overflow: hidden;
 }
 .apartment-description__container {
@@ -1385,14 +1383,29 @@ button {
   font-size: 3.2rem;
 }
 .services {
-  padding: 10rem 0;
-  background-color: #f8f8f8;
+  padding: 7.5rem 0;
+  background-color: #faf7f7;
 }
-.services--white {
-  background-color: #fff;
+@media (max-width: 575.98px) {
+  .services {
+    padding: 3rem 0;
+  }
 }
-.services__container {
+.services__title {
+  margin-bottom: 2rem;
+  color: #3357b4;
+  font-weight: 500;
+  font-size: 3.2rem;
+}
+@media (max-width: 575.98px) {
+  .services__title {
+    margin-bottom: 1rem;
+    font-size: 2.8rem;
+  }
+}
+.services__body {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 .services__card {
@@ -1400,22 +1413,45 @@ button {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  width: 33.3%;
+  width: calc((100% / 3) - (100px / 3));
   padding: 3rem 5rem;
+  margin: 25px 0;
+  border-radius: 5px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(51, 51, 51, 0.15);
 }
-.services__image {
+@media (max-width: 991.98px) {
+  .services__card {
+    width: calc(50% - 25px);
+  }
+}
+@media (max-width: 767.98px) {
+  .services__card {
+    padding: 3rem;
+    margin: 20px 0;
+    width: calc(50% - 20px);
+  }
+}
+@media (max-width: 575.98px) {
+  .services__card {
+    width: 100%;
+    margin: 15px 0;
+  }
+}
+.services__card-image {
   width: 6rem;
   margin-bottom: 2rem;
 }
-.services__title {
+.services__card-title {
   margin-bottom: 1rem;
   text-align: center;
-  color: #28448c;
 }
-.services__text {
+.services__card-text {
   margin-bottom: auto;
   text-align: center;
   font-weight: 300;
+  font-size: 1.4rem;
+  line-height: 1.4;
 }
 .footer {
   padding: 3rem 0;

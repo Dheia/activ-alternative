@@ -6,7 +6,7 @@ import popup from './modules/popup';
 import sendForm from './modules/sendForm';
 
 window.addEventListener('DOMContentLoaded', () => {
-    toggleMenu();
+    toggleMenu(); 
     starterSwiper();
     objectsSwiper();
     postsSwiper();
@@ -14,5 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
         selectorsShow: '.navigation__call, .footer__btn',
         selectorsHide: '.contact-form__close, .popup'
     });
+    
     sendForm();
 });
