@@ -14,6 +14,5 @@ window.addEventListener('DOMContentLoaded', () => {
         selectorsShow: '.navigation__call, .footer__btn',
         selectorsHide: '.contact-form__close, .popup'
     });
-    
     sendForm();
 });

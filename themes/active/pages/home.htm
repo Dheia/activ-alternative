@@ -17,6 +17,8 @@ layout = "default"
 
 {% partial 'static/starter' %}
 
+{% partial 'static/about' %}
+
 {% if apartments|length > 2 %}
     {% partial 'dynamic/cardlist-swiper' 
         itemsPartial='dynamic/objects' 
