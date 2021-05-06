@@ -8,20 +8,19 @@ layout = "default"
 
     function onStart() {
         $this['posts'] = Post::getPostsByParams(['page' => $this->param('page')]);
+        $this->addJs('assets/js/common.bundle.js');
         $this['breadcrumbs'] = [['Новости', '/news']];
     }
 ?>
 ==
 
-{% partial 'static/breadcrumbs' %}
+{% partial 'breadcrumbs' %}
 
 {% if posts|length > 0 %}
-    {% partial 'dynamic/cardlist' 
-        itemsPartial='dynamic/posts'
+    {% partial 'cardlist' 
+        itemsPartial='posts'
         items=posts
         title='Новости' %}
 {% else %}
     <div class="container">Записей не найдено</div>
 {% endif %}
-
-{% partial 'static/popup' %}

@@ -15,24 +15,26 @@ layout = "default"
 ?>
 ==
 
-{% partial 'static/starter' %}
+{% partial 'starter' %}
 
-{% partial 'static/about' %}
+{% partial 'about' %}
 
 {% if apartments|length > 2 %}
-    {% partial 'dynamic/cardlist-swiper' 
-        itemsPartial='dynamic/objects' 
+    {% partial 'cardlist-swiper' 
+        itemsPartial='objects' 
         title='Квартиры'
         allLink='/catalog'
         selector='_objects' %}
 {% endif %}
 
-{% partial 'static/services' %}
+{% partial 'services' %}
 
 {% if posts|length > 2 %}
-    {% partial 'dynamic/cardlist-swiper' 
-        itemsPartial='dynamic/posts' 
+    {% partial 'cardlist-swiper' 
+        itemsPartial='posts' 
         title='Новости'
         allLink='/news'
         selector='_posts' %}
 {% endif %}
+
+{% partial 'contact' %}

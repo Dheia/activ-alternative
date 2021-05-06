@@ -1,14 +1,11 @@
 {% if post.is_active %}
-    <div class="apartment">
-        <div class="apartment-left">
-            <div class="apartment-preview">
-                <img src="{{ post.preview.thumb(360, 360, { 'mode': 'crop' }) }}" alt="">
+    <div class="post">
+        <div class="post__container container">
+            <div class="post__header">
+                <h1 class="post__title">{{ post.title }}</h1>
+                <time class="post__date" datetime="{{ post.created_at }}">{{ post.created_at|date('F j, Y') }}</time>
             </div>
-        </div>
-        <div class="apartment-right">
-            <h1>{{ post.title }}</h1>
-            <span>{{ post.created_at|date('d.m.Y') }}</span>
-            <p>{{ post.text|raw }}</p>
+            <div class="raw">{{ post.text|raw }}</div>
         </div>
     </div>
 {% else %}

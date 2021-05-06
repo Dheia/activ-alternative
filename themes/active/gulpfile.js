@@ -117,7 +117,8 @@ function js(cb) {
             mode: "production",
             entry: {
                 index: './src/js/index.js',
-                object: './src/js/object.js'
+                common: './src/js/common.js',
+                object: './src/js/object.js',
             },
             output: {
                 filename: '[name].bundle.js',
@@ -155,7 +156,8 @@ function jsWatch(cb) {
             mode: "development",
             entry: {
                 index: './src/js/index.js',
-                object: './src/js/object.js'
+                common: './src/js/common.js',
+                object: './src/js/object.js',
             },
             output: {
                 filename: '[name].bundle.js',

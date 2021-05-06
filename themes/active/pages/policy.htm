@@ -1,6 +1,18 @@
 title = "Policy"
 url = "/policy"
 layout = "default"
+is_hidden = 0
+==
+<?php
+
+    function onStart() {
+        $this->addJs('assets/js/common.bundle.js');
+        $this['breadcrumbs'] = [['Политика конфиденциальности', '/policy']];
+    }
+
+?>
 ==
 
-<section>Policy</section>
+{% partial 'breadcrumbs' %}
+
+<div class="container">Текст политики конфиденциальности</div>
