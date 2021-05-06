@@ -1,7 +1,6 @@
 .DS_Store
 *.log
 bootstrap
-config
 modules/**/*
 node_modules
 plugins/october
