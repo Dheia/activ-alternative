@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Агенство недвижимости "ACTIV"</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="icon" href="favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,400;0,500;0,700;1,500&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+
+    {% include '../twig-partials/header.html' %}
+
+    {% include '../twig-partials/navigation.html' %}
+
+    <div class="read-news">
+        <div class="read-news__container container">
+            <h2 class="read-news__title">«Сбер» назвал регионы с самыми низкими ценами на жилье</h2>
+            <div class="read-news__box">
+                <div class="read-news__img">
+                    <img src="../img/news/1.jpg" alt=""> 
+                </div>
+                <div class="read-news__info">
+                    <p class="read-news__info__text">
+                        Самые доступные квартиры на вторичном рынке предлагаются в Ингушетии: их средняя стоимость составляет около 1 млн руб. При этом самые доступные варианты в новостройках — в Курганской области, где новую квартиру в среднем можно купить за 1,7 млн руб. Об этом свидетельствуют подсчеты, сделанные для «РБК-Недвижимости» в «ДомКлик» (входит в экосистему «Сбера»). При расчетах аналитики рассматривали квартиру площадью 45 кв. м на основе данных объявлений, которые размещены на платформе.
+                        <br>
+                        Помимо Ингушетии, самые доступные варианты на вторичном рынке можно найти во Владимирской и Курганской областях. В среднем квартиры от собственника в этих регионах предлагаются по цене от 1,7 млн руб.
+                        <br>
+                        Чуть выше цены на вторичном рынке в республиках Калмыкия и Марий Эл — квартиру здесь можно приобрести по цене от 1,8 млн руб. В десятку регионов с самыми низкими ценами на вторичном рынке также вошли Челябинская, Брянская, Псковская, Саратовская области и Кабардино-Балкарская Республика.
+                        <br>
+                        Что касается рынка первичного жилья, то, кроме Курганской области, в список самых доступных вариантов вошли Оренбургская (1,74 млн руб.), Ивановская (1,77 млн руб.), а также Псковская (1,85 млн руб.) и Саратовская (1,96 млн руб.) области.
+                        <br>
+                        Далее идут Республика Адыгея, Смоленская область, Ставропольский край, Чувашская Республика и Брянская область. Минимальные цены на квартиры в новостройках здесь начинаются от 2–2,1 млн руб.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% include '../twig-partials/footer.html' %}
+
+    {% include '../twig-partials/popup.html' %}
+    
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/2689382108.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+</body>
+</html>

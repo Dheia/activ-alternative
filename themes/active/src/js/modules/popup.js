@@ -1,25 +1,31 @@
-const popup = ({ selectorsShow, selectorsHide}) => {
-    const triggersShow = document.querySelectorAll(selectorsShow),
-        triggersHide = document.querySelectorAll(selectorsHide),
-        popupElem = document.querySelector('.popup');
+import validate from './validate'
 
-    const isTrigger = (array, obj) => {
-        array = Array.from(array);
-        return array.filter(elem => elem === obj)[0];
-    }
+const popup = () => {
+    const popup = document.getElementById('popup');
+    const btn = document.querySelectorAll('.btn');
+    const close = document.getElementById('popup__close');
 
-    const bindTrigger = (action) => {
-        return (trigger, index, array) => {
-            trigger.addEventListener('click', e => {
-                if (isTrigger(array, e.target)) {
-                    popupElem.classList[action]('popup--active');
-                }
-            });
+    for (let i = 0; i < btn.length; i++) {
+        btn[i].onclick = function () {
+            popup.style.display = "block";
+            document.getElementsByTagName("body")[0].style.overflow="hidden";
         }
     }
 
-    triggersShow.forEach(bindTrigger('add'));
-    triggersHide.forEach(bindTrigger('remove'));
-}
+    close.onclick = function () {
+        popup.style.display = "none";
+        document.getElementsByTagName("body")[0].style.overflow="auto";
+    }
+
+    window.addEventListener('click', (event) => {
+        if (event.target == popup) {
+            popup.style.display = "none";
+            document.getElementsByTagName("body")[0].style.overflow="auto";
+        }
+    });
+    
+};
+
+
 
 export default popup;

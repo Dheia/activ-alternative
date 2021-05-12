@@ -7,14 +7,11 @@ layout = "default"
     use TenTax\News\Models\Post;
 
     function onStart() {
-        $this->addJs('assets/js/common.bundle.js');
         $this['post'] = Post::getPostBySlug($this->param('slug'));
-        $this['breadcrumbs'] = [['Новости', '/news'], [$this['post']->title, '/post/' . $this['post']->slug]];
     }
 
 ?>
 ==
 
-{% partial 'breadcrumbs' %}
-
 {% partial 'post' %}
+{% partial 'popup' %}

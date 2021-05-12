@@ -1,44 +1,35 @@
 .swiper {
+
     &-slide {
-        position: relative;
-        height  : auto;
+        img {
+            width: 100%;
+        }
     }
 
-    &-navigation {
-        display: flex;
-    }
+    &-button-next,
+    &-button-prev {
+        width : 70px;
+        height: 70px;
 
-    &-button-prev,
-    &-button-next {
-        width : 4rem;
-        height: 4rem;
-        margin: 0;
+        background: rgba(26, 26, 26, 0.3);
 
-        border-radius   : 50%;
-        background-color: darken(@orange, 7%);
+        color    : #EAEAEA;
+        font-size: 80px;
 
-        position: relative;
-        top     : 0;
-        left    : 0;
-
-        transition: opacity 0.3s;
-
-        @media(max-width: @mobile-bp) {
-            width : 3.5rem;
-            height: 3.5rem;
+        // tablet
+        @media (max-width:991.98px) {
+            width : 40px;
+            height: 40px;
         }
 
-        &:after {
-            font-size: 1.8rem;
-            color    : @white;
+        &::after {
+            font-size  : 40px;
+            font-weight: 600;
 
-            @media(max-width: @mobile-bp) {
-                font-size: 1.6rem;
+            // tablet
+            @media (max-width:991.98px) {
+                font-size: 24px;
             }
         }
-    }
-
-    &-button-prev {
-        margin-right: 1rem;
     }
 }

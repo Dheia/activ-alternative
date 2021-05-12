@@ -50,7 +50,7 @@ class Post extends Model
     public function scopegetPostsByParams($query, $params = []) {
         extract(array_merge([
             'page' => 1,
-            'perPage' => 9,
+            'perPage' => 8,
             'sort' => 'created_at-desc'
         ], $params));
 

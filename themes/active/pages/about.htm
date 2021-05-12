@@ -9,11 +9,11 @@ is_hidden = 0
 
     function onStart() {
         $this['posts'] = Post::getPostsByParams(['perPage' => 3]);
-        $this->addJs('assets/js/common.bundle.js');
-        $this['breadcrumbs'] = [['О нас', '/about']];
+        $this->addJs('assets/js/index.bundle.js');
     }
 ?>
 ==
-{% partial 'breadcrumbs' %}
 
-{% partial 'about' %}
+{% partial 'static/company' %}
+
+{% partial 'posts' %}

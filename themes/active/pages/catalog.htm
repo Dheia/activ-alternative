@@ -8,19 +8,10 @@ layout = "default"
 
     function onStart() {
         $this['apartments'] = Apartment::getApartmentsByParams(['page' => $this->param('page')]);
-        $this->addJs('assets/js/common.bundle.js');
-        $this['breadcrumbs'] = [['Каталог', '/catalog']];
+        $this->addJs('assets/js/catalog.bundle.js');
     }
 ?>
 ==
 
-{% partial 'breadcrumbs' %}
-
-{% if apartments|length > 0 %}
-    {% partial 'cardlist' 
-        itemsPartial='objects'
-        items=apartments
-        title='Квартиры' %}
-{% else %}
-    <div class="container">Записей не найдено</div>
-{% endif %}
+{% partial 'objects' %}
+{% partial 'popup' %}

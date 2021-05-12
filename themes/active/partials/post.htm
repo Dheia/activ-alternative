@@ -1,13 +1,16 @@
 {% if post.is_active %}
+
     <div class="post">
         <div class="post__container container">
             <div class="post__header">
                 <h1 class="post__title">{{ post.title }}</h1>
-                <time class="post__date" datetime="{{ post.created_at }}">{{ post.created_at|date('F j, Y') }}</time>
             </div>
-            <div class="raw">{{ post.text|raw }}</div>
+            <div class="raw">
+                {{ post.text|raw }}
+            </div>
         </div>
     </div>
+    
 {% else %}
     записи не найдено
 {% endif %}

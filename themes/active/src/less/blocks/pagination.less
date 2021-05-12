@@ -1,8 +1,11 @@
 .pagination {
+    display: flex;
+    justify-content: center;
+
     &__list {
         display: flex;
-        align-items: center;
         justify-content: center;
+        align-items: center;
         flex-wrap: wrap;
     }
 
@@ -14,28 +17,23 @@
 
     &__link {
         display: flex;
-        align-items: center;
         justify-content: center;
-        width: 4rem;
-        height: 4rem;
+        align-items: center;
+        width: 40px;
+        height: 40px;
 
-        border-radius: 3px;
-        background-color: @lightgreyblue;
+        background-color: #fff;
+        border: 1px solid #ff8c42;
 
-        color: @greyblue;
-        font-weight: 500;
-        font-size: 1.4rem;
+        text-decoration: none;
+        color: #666;
 
-        transition: background-color 0.3s;
+        transition: background-color 0.3s, color 0.3s;
 
-        &:hover {
-            background-color: darken(@lightgreyblue, 10%);
-        }
-
-        &._active {
-            background-color: @darkblue;
-
-            color: @white;
+        &:hover,
+        &.active {
+            background-color: #ff8c42;
+            color: #fff;
         }
     }
 }

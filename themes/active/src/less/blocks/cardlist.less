@@ -1,91 +1,39 @@
 .cardlist {
-    padding: 8rem 0 10rem;
-    
-    @media(max-width: @mobile-bp) {
-        padding: 3rem 0;
-    }
-
-    &__container {
-        overflow: hidden;
-    }
-
-    &__header {
-        display      : flex;
-        align-items  : center;
-        margin-bottom: 3rem;
-        padding-bottom: 2rem;
-
-        border-bottom: 1px solid rgba(@darkblue, 0.2);
-
-        @media(max-width: @mobile-bp) {
-            flex-direction: column;
-        }
-    }
-
-    &__row {
-        display        : flex;
-        justify-content: space-between;
-        align-items    : center;
-
-        @media(max-width: @mobile-bp) {
-            width: 100%;
-        }
-    }
+    padding: 40px 0;
 
     &__title {
-        margin-right: auto;
+        margin-bottom: 30px;
 
-        color      : @darkblue;
-        font-weight: 500;
-        font-size  : 3.2rem;
-
-        @media(max-width: @mobile-bp) {
-            margin-bottom: 1rem;
-
-            font-size: 2.8rem;
-        }
+        font-size     : 30px;
+        font-weight   : 100;
+        text-transform: uppercase;
+        color         : #8f6666;
+        font-family   : 'Source Sans Pro', Arial, Helvetica, sans-serif;
+        letter-spacing: 0.06em;
     }
 
-    &__link {
-        display: flex;
-        align-items: center;
-        margin-right: 5rem;
-
-        font-size: 1.4rem;
-        font-weight: 500;
-        color: @darkgrey;
-
-        transition: transform 0.3s;
-
-        &:hover {
-            transform: translateX(1rem);
-        }
-
-        &::after {
-            margin-left: 0.5rem;
-        }
-    }
-
-    &__list {
+    &__box {
         display              : grid;
-        grid-gap             : 5rem;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap             : 40px;
+        grid-template-columns: repeat(4, 1fr);
 
         &--space-bottom {
-            margin-bottom: 3rem;
+            margin-bottom: 40px;
         }
 
-        @media(max-width: @tablet-bp) {
-            grid-template-columns: 1fr 1fr;
+        // desktop-middle
+        @media (max-width:1199.98px) {
+            grid-template-columns: repeat(3, 1fr);
         }
 
-        @media(max-width: @reverse-bp) {
-            grid-gap: 2.5rem;
+        // tablet
+        @media (max-width:991.98px) {
+            grid-template-columns: repeat(2, 1fr);
         }
 
-        @media(max-width: @mobile-bp) {
+        // phone
+        @media (max-width:575.98px) {
             grid-template-columns: 1fr;
-            grid-gap             : 5rem;
         }
     }
 }

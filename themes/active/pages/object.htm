@@ -8,12 +8,10 @@ layout = "default"
 
     function onStart() {
         $this['apartment'] = Apartment::getApartmentBySlug($this->param('slug'));
-        $this['breadcrumbs'] = [['Каталог', '/catalog'], [$this['apartment']->title, '/object/' . $this['apartment']->slug]];
-        $this->addJs('assets/js/object.bundle.js');
+        $this->addJs('assets/js/objects.bundle.js');
     }
 ?>
 ==
 
-{% partial 'breadcrumbs' %}
-
 {% partial 'object' %}
+{% partial 'popup' %}

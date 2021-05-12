@@ -2,17 +2,6 @@ title = "Ошибка 404"
 url = "/404"
 layout = "default"
 is_hidden = 0
+
 ==
-<?php
-
-    function onStart() {
-        $this->addJs('assets/js/common.bundle.js');
-        $this['breadcrumbs'] = [['404', '/404']];
-    }
-
-?>
-==
-
-{% partial 'breadcrumbs' %}
-
-<div class="container">Такой страницы не найдено (Ошибка 404)</div>
+<section>Error 404</section>

@@ -5,36 +5,27 @@ layout = "default"
 ==
 <?php
     use TenTax\News\Models\Post;
-    use TenTax\Houses\Models\Apartment;
 
     function onStart() {
-        $this['posts'] = Post::getPostsByParams(['perPage' => 6]);
-        $this['apartments'] = Apartment::getApartmentsByParams(['perPage' => 6]);
+        $this['posts'] = Post::getPostsByParams(['perPage' => 4]);
         $this->addJs('assets/js/index.bundle.js');
     }
 ?>
 ==
 
-{% partial 'starter' %}
 
-{% partial 'about' %}
+{% partial 'static/slider' %}
 
-{% if apartments|length > 2 %}
-    {% partial 'cardlist-swiper' 
-        itemsPartial='objects' 
-        title='Квартиры'
-        allLink='/catalog'
-        selector='_objects' %}
-{% endif %}
+{% partial 'static/company' %}
 
-{% partial 'services' %}
+{% partial 'static/services' %}
 
-{% if posts|length > 2 %}
-    {% partial 'cardlist-swiper' 
-        itemsPartial='posts' 
-        title='Новости'
-        allLink='/news'
-        selector='_posts' %}
-{% endif %}
+{% partial 'posts' %}
 
-{% partial 'contact' %}
+{% partial 'static/partners' %}
+
+{% partial 'static/team' %}
+
+{% partial 'static/map' %}
+
+{% partial 'popup' %}

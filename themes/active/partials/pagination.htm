@@ -3,19 +3,19 @@
         <ul class="pagination__list">
             {% if items.currentPage > 1 %}
                 <li class="pagination__item">
-                    <a href="/{{ this.page.id }}/{{ items.currentPage - 1 }}" class="pagination__link icon-arrow-left"></a>
+                    <a class="pagination__link fas fa-angle-left" href="/{{ this.page.id }}/{{ items.currentPage - 1 }}"></a>
                 </li>
             {% endif %}
             {% for i in 1..items.lastPage %}
                 <li class="pagination__item">
-                    <a  href="/{{ this.page.id }}/{{ i }}" class="pagination__link {% if i == items.currentPage %}_active{% endif %}">
+                    <a class="pagination__link {% if i == items.currentPage %}active{% endif %}" href="/{{ this.page.id }}/{{ i }}">
                         {{ i }}
                     </a>
                 </li>
             {% endfor %}
             {% if items.currentPage < items.lastPage %}
                 <li class="pagination__item">
-                    <a href="/{{ this.page.id }}/{{ items.currentPage + 1 }}" class="pagination__link icon-arrow-right"></a>
+                    <a class="pagination__link fas fa-angle-right" href="/{{ this.page.id }}/{{ items.currentPage + 1 }}"></a>
                 </li>
             {% endif %}
         </ul>
