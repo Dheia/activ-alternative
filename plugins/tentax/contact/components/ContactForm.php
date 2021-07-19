@@ -40,12 +40,12 @@ class ContactForm extends ComponentBase {
         
         });
 
-        Request::create([
-            'name' => $vars['name'],
-            'phone' => $vars['phone'],
-            'comment' => $vars['comment'],
-            'is_view' => 0
-        ]);
+        // Request::create([
+        //     'name' => $vars['name'],
+        //     'phone' => $vars['phone'],
+        //     'comment' => $vars['comment'],
+        //     'is_view' => 0
+        // ]);
 
         return '{"success": "Ваше сообщение отправлено"}';
     }
