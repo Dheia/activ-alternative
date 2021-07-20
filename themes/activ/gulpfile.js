@@ -1,222 +1,85 @@
-"use strict";
+'use strict';
 
-const { src, dest } = require("gulp");
-const gulp = require("gulp");
-const autoprefixer = require("gulp-autoprefixer");
-const cssbeautify = require("gulp-cssbeautify");
-const removeComments = require('gulp-strip-css-comments');
-const rename = require("gulp-rename");
-const less = require("gulp-less");
-const cssnano = require("gulp-cssnano");
-const uglify = require("gulp-uglify");
-const plumber = require("gulp-plumber");
-const imagemin = require("gulp-imagemin");
-const del = require("del");
-const notify = require("gulp-notify");
-const webpack = require('webpack');
+const { series, src, dest, watch } = require('gulp');
+const less = require('gulp-less');
 const webpackStream = require('webpack-stream');
+const del = require('del');
 
+// Путь к формируемой сборщиком папке с готовыми файлами
+const dist = './assets';
 
-/* Paths */
-const srcPath = 'src/';
-const distPath = 'assets/';
-
+// Пути для работы такс раннера
 const path = {
-    build: {
-        js: distPath + "js/",
-        css: distPath + "css/",
-        images: distPath + "images/",
-        fonts: distPath + "fonts/"
-    },
     src: {
-        js: srcPath + "js/*.js",
-        css: srcPath + "less/style.less",
-        images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts: srcPath + "fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        css: [
+            './src/less/style.less'
+        ],
+        js: {
+            all: './src/js/**/*.js',
+            entry: {
+                common: './src/js/common.js',
+                index: './src/js/index.js',
+                object: './src/js/object.js',
+            }
+        },
+        fonts: './src/fonts/**/*',
+        images: './src/images/**/*'
+    },
+    dist: {
+        css: dist + '/css',
+        js: dist + '/js',
+        fonts: dist + '/fonts',
+        images: dist + '/images'
     },
     watch: {
-        js: srcPath + "js/**/*.js",
-        css: srcPath + "less/**/*.less",
-        images: srcPath + "images/**/*.{jpg,png,svg,gif,ico,webp,webmanifest,xml,json}",
-        fonts: srcPath + "fonts/**/*.{eot,woff,woff2,ttf,svg}"
+        css: './src/less/**/*.less',
+        js: './src/js/**/*.js',
+        fonts: './src/fonts/**/*',
+        images: './src/images/**/*'
     },
-    clean: "./" + distPath
+    clean: {
+        all: dist + '/**/*'
+    }
 }
 
-
-
-/* Tasks */
-
-function css(cb) {
-    return src(path.src.css, { base: srcPath + "less/" })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: "Less Error",
-                    message: "Error: <%= error.message %>"
-                })(err);
-                this.emit('end');
-            }
-        }))
+function buildLess() {
+    return src(path.src.css)
         .pipe(less())
-        .pipe(autoprefixer({
-            cascade: true
-        }))
-        .pipe(cssbeautify())
-        .pipe(dest(path.build.css))
-        .pipe(cssnano({
-            zindex: false,
-            discardComments: {
-                removeAll: true
-            }
-        }))
-        .pipe(removeComments())
-        .pipe(rename({
-            suffix: ".min",
-            extname: ".css"
-        }))
-        .pipe(dest(path.build.css));
-
-    cb();
+        .pipe(dest(path.dist.css));
 }
 
-function cssWatch(cb) {
-    return src(path.src.css, { base: srcPath + "less/" })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: "Less Error",
-                    message: "Error: <%= error.message %>"
-                })(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(less())
-        .pipe(dest(path.build.css))
-        .pipe(rename({
-            suffix: ".min",
-            extname: ".css"
-        }))
-        .pipe(dest(path.build.css));
-
-    cb();
-}
-
-function js(cb) {
-    return src(path.src.js, { base: srcPath + 'js/' })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: "JS Error",
-                    message: "Error: <%= error.message %>"
-                })(err);
-                this.emit('end');
-            }
-        }))
+function buildJs() {
+    return src(path.src.js.all)
         .pipe(webpackStream({
-            mode: "production",
-            entry: {
-                index: './src/js/index.js',
-                common: './src/js/common.js',
-                object: './src/js/object.js',
-            },
+            mode: 'development',
+            entry: path.src.js.entry,
             output: {
-                filename: '[name].bundle.js',
+                filename: '[name].bundle.js'
             },
-            module: {
-                rules: [
-                    {
-                        test: /\.(js)$/,
-                        exclude: /(node_modules)/,
-                        loader: 'babel-loader',
-                        query: {
-                            presets: ['@babel/preset-env']
-                        }
-                    }
-                ]
-            }
+            // devtool: "source-map"
         }))
-        .pipe(dest(path.build.js));
-
-    cb();
+        .pipe(dest(path.dist.js));
 }
 
-function jsWatch(cb) {
-    return src(path.src.js, { base: srcPath + 'js/' })
-        .pipe(plumber({
-            errorHandler: function (err) {
-                notify.onError({
-                    title: "JS Error",
-                    message: "Error: <%= error.message %>"
-                })(err);
-                this.emit('end');
-            }
-        }))
-        .pipe(webpackStream({
-            mode: "development",
-            entry: {
-                index: './src/js/index.js',
-                common: './src/js/common.js',
-                object: './src/js/object.js',
-            },
-            output: {
-                filename: '[name].bundle.js',
-            }
-        }))
-        .pipe(dest(path.build.js));
-
-    cb();
-}
-
-function images(cb) {
-    return src(path.src.images)
-        .pipe(imagemin([
-            imagemin.gifsicle({ interlaced: true }),
-            imagemin.mozjpeg({ quality: 80, progressive: true }),
-            imagemin.optipng({ optimizationLevel: 5 }),
-            imagemin.svgo({
-                plugins: [
-                    { removeViewBox: true },
-                    { cleanupIDs: false }
-                ]
-            })
-        ]))
-        .pipe(dest(path.build.images));
-
-    cb();
-}
-
-function fonts(cb) {
+function copyFonts() {
     return src(path.src.fonts)
-        .pipe(dest(path.build.fonts));
-
-    cb();
+        .pipe(dest(path.dist.fonts));
 }
 
-function clean(cb) {
-    return del(path.clean);
-
-    cb();
+function copyImages() {
+    return src(path.src.images)
+        .pipe(dest(path.dist.images));
 }
 
-function watchFiles() {
-    gulp.watch([path.watch.css], cssWatch);
-    gulp.watch([path.watch.js], jsWatch);
-    gulp.watch([path.watch.images], images);
-    gulp.watch([path.watch.fonts], fonts);
+function watching() {
+    watch(path.watch.css, buildLess);
+    watch(path.watch.js, buildJs);
+    watch(path.watch.fonts, copyFonts);
+    watch(path.watch.images, copyImages);
 }
 
-const build = gulp.series(clean, gulp.parallel(css, js, images, fonts));
-const watch = gulp.parallel(build, watchFiles);
+function clean() {
+    return del(path.clean.all);
+}
 
-
-
-/* Exports Tasks */
-exports.css = css;
-exports.js = js;
-exports.images = images;
-exports.fonts = fonts;
-exports.clean = clean;
-exports.build = build;
-exports.watch = watch;
-exports.default = watch;
+exports.default = series(clean, buildLess, buildJs, copyFonts, copyImages, watching);
