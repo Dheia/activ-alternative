@@ -1,4 +1,4 @@
-# activ
+# учебный проект activ-alternative
 
 Основной сайт: [an-activ.ru](http://an-activ.ru)
 
